@@ -11,30 +11,39 @@ jQuery(document).ready(function() {
 /*===      WOW Js        ===*/
     new WOW().init();
 
+/*===      스크롤 플러그인        ===*/
+ $('.pri_sum').niceScroll();
+
 /*=== 열고 닫기  ===*/
     $(".open-about-btn").click(function(){
+        $('.home-left .card__front>div').fadeOut(500);
         $('.about-body>div').fadeIn(1000);
         $(".home").addClass('flipped');
 
-        // $('.about-body .line').css({'display':'block'}).animate({
-        //         'marginLeft':'0',
-        //         'width':'50px'
-        //     },2000);
+        $('.about-body .line').css({'display':'block'}).animate({
+                'marginLeft':'0',
+                'width':'50px'
+            },2000);
     });
 
     $(".close-about-btn").click(function(){
-      
+        $('.card__front>div').fadeIn(500);
+        $('.about-body>div').fadeOut(500);
         $(".home").removeClass('flipped');
-        // $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
+        $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
     });
 
 
     $(".open-subscribe-btn").click(function(){
-        $(".count-clock").addClass('flipped').find('.subscribe-body>div').fadeIn(1000);
+      $('.home-right .card__front>div').fadeOut(500);
+      $('.subscribe-body>div').fadeIn(1000);
+        $(".count-clock").addClass('flipped');
         $(".subscribe-section").find('.line').css({'display':'block'}).animate({
                 'marginLeft':'0',
                 'width':'50px'
             },2000);
+
+        // === 에니메이션 === //
         setTimeout(function(){
 
           $(".tit_wrap").fadeTo(1,2000);
@@ -47,11 +56,17 @@ jQuery(document).ready(function() {
           });
 
         },1000)
+        // === 높이보정 === //
+        $('.subscribe-body').css('body','auto');
+
 
     });
 
+
     $(".close-subscribe-btn").click(function(){
-       $('.subscribe-body>div').fadeOut();
+      $('.home-right .card__front>div').fadeIn(500);
+      $('.subscribe-body >div').fadeOut(500);
+
        $(".tit_wrap").fadeOut();
        $("#tit1,#tit3,#tit5").css({
          'right':'30%'
