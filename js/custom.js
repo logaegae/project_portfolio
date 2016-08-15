@@ -13,27 +13,54 @@ jQuery(document).ready(function() {
 
 /*=== 열고 닫기  ===*/
     $(".open-about-btn").click(function(){
-        $('.about-body>div').fadeIn(1000).parents('.home')
-        $(".home").addClass('flipped').find('.line').css({'display':'block'}).animate({
-                'marginLeft':'0',
-                'width':'50px'
-            },2000);
+        $('.about-body>div').fadeIn(1000);
+        $(".home").addClass('flipped');
+
+        // $('.about-body .line').css({'display':'block'}).animate({
+        //         'marginLeft':'0',
+        //         'width':'50px'
+        //     },2000);
     });
 
     $(".close-about-btn").click(function(){
-        $('.about-body>div').fadeOut();
+      
         $(".home").removeClass('flipped');
-        $('.line').fadeOut('slow/400/fast').css({'marginLeft':'3000px','width':'1000px'});
+        // $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
     });
 
 
     $(".open-subscribe-btn").click(function(){
         $(".count-clock").addClass('flipped').find('.subscribe-body>div').fadeIn(1000);
+        $(".subscribe-section").find('.line').css({'display':'block'}).animate({
+                'marginLeft':'0',
+                'width':'50px'
+            },2000);
+        setTimeout(function(){
+
+          $(".tit_wrap").fadeTo(1,2000);
+
+          $("#tit1,#tit3,#tit5").css({
+            'right':'0'
+          });
+          $("#tit2,#tit4,#tit6").css({
+            'left':'0'
+          });
+
+        },1000)
+
     });
 
     $(".close-subscribe-btn").click(function(){
        $('.subscribe-body>div').fadeOut();
+       $(".tit_wrap").fadeOut();
+       $("#tit1,#tit3,#tit5").css({
+         'right':'30%'
+       });
+       $("#tit2,#tit4,#tit6").css({
+         'left':'30%'
+       });
         $(".count-clock").removeClass('flipped');
+        $('.subscribe-section .line').fadeOut('slow/400/fast').css({'marginLeft':'1000px','width':'1000px'});
     });
 
 
