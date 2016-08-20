@@ -39,7 +39,7 @@ $('.social-icon li a').click(function(){
 /*=== 열고 닫기  ===*/
     $(".open-about-btn").click(function(){
         $('.home-left .card__front>div').fadeOut(500);
-        $('.about-body>div').fadeIn(2000);
+        $('.about-body').fadeIn(2000);
         $(".home").addClass('flipped');
 
         $('.about-body .line').css({'display':'block'}).animate({
@@ -55,7 +55,7 @@ $('.social-icon li a').click(function(){
 
     $(".close-about-btn").click(function(){
         $('.card__front>div').fadeIn(500);
-        $('.about-body>div').fadeOut(500);
+        $('.about-body').fadeOut(500);
         $(".home").removeClass('flipped');
         $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
     });
@@ -249,14 +249,26 @@ $('.social-icon li a').click(function(){
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
         var insert = '<div class="pop_blind">';
-        insert += '<div class="popUP"><div>';
-        insert += '<div>';
+        insert += '<div class="shadow">';
+        insert += '<div class="popUP"></div>';
+        insert += '</div></div>';
+        $('section').append(insert).find('.pop_blind').fadeIn(500,function(){
 
-        $('body').append(insert)
-    })
-    $('.pop_blind').on('click',function(){
-        $('.pop_blind').remove();
-    })
+          $('.shadow').css({
+            'left':'25%',
+            'top':'25%',
+            'width':'50%',
+            'height':'50%'
+          });
+          $('.popUP').show();
+        });
+    });
+ /*===           팝업 닫기            ====*/
+$(document).on('click','.pop_blind',function(){
+  $('.pop_blind').fadeOut(500,function(){
+    $('.pop_blind').remove();
+  })
+})
 /*===           스크롤 버튼 함수            ====*/
     function scBtn(){
 
