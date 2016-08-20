@@ -26,8 +26,8 @@ jQuery(document).ready(function() {
     // }
 /*===      WOW Js        ===*/
     new WOW().init();
-/*=== sns click  ===*/
 
+/*=== sns 클릭  ===*/
 $('.social-icon li a').click(function(){
     $('#sns_mes').fadeIn(500);
     var snsTime = setTimeout(function(){
@@ -41,7 +41,6 @@ $('.social-icon li a').click(function(){
         $('.home-left .card__front>div').fadeOut(500);
         $('.about-body').fadeIn(2000);
         $(".home").addClass('flipped');
-
         $('.about-body .line').css({'display':'block'}).animate({
                 'marginLeft':'0',
                 'width':'50px'
@@ -54,7 +53,7 @@ $('.social-icon li a').click(function(){
     });
 
     $(".close-about-btn").click(function(){
-        $('.card__front>div').fadeIn(500);
+        $('.card__front > div').fadeIn(500);
         $('.about-body').fadeOut(500);
         $(".home").removeClass('flipped');
         $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
@@ -63,7 +62,9 @@ $('.social-icon li a').click(function(){
 
     $(".open-aboutMe-btn").click(function(){
         $('.home-right .card__front>div').fadeOut(500);
-        $('.aboutMe-body>div').fadeIn(2000);
+        $('.aboutMe-section').fadeIn(2000);
+        setTimeout(function(){$('.close-aboutMe-btn').fadeIn(500);},500)
+
         $(".count-clock").addClass('flipped');
         $(".aboutMe-section").find('.line').css({'display':'block'}).animate({
                 'marginLeft':'0',
@@ -96,7 +97,8 @@ $('.social-icon li a').click(function(){
 
       $(".close-aboutMe-btn").click(function(){
           $('.home-right .card__front>div').fadeIn(500);
-          $('.aboutMe-body >div').fadeOut(500);
+          $('.aboutMe-section').fadeOut(500);
+          $('.close-aboutMe-btn').fadeOut(200);
 
            $(".tit_wrap").fadeOut();
            $("#tit1,#tit3,#tit5").css({
@@ -119,10 +121,8 @@ $('.social-icon li a').click(function(){
     });
 
 /*=== 음소거 버튼  ===*/
-    $('#megaIcon').click(function(){
-
-        var bgUrl = $(this).attr('class')
-
+    $(document).on('click','#megaIcon',function(){
+        var bgUrl = $(this).attr('class');
         if( bgUrl !=  "icon-megaphone-mute" ) {
         $(this).removeClass('icon-megaphone').addClass('icon-megaphone-mute')
         var vid = document.getElementById("bgvid");
@@ -134,7 +134,7 @@ $('.social-icon li a').click(function(){
         }
     });
 
-/*===  Close Box Effect  ====*/
+/*===  닫기버튼 클릭 이벤트  ====*/
     $('.close-aboutMe-btn, #btn-close-modal, .close-about-btn, #btn-close-modal ').mouseenter(function(){
         $(this).css({
             'transition':'700ms',
@@ -147,24 +147,20 @@ $('.social-icon li a').click(function(){
     });
 
 /*===  언어 선택  ====*/
-    $('.translator > a').click(function(){
+    $(document).on('click','.translator > a', function(){
         if( $('.translator').attr('class').indexOf('open') == -1 ){
             $('.translator').addClass('open');
             $('.translator .trans_box').slideDown();
+            $("#arr").css({'transform':'rotateZ(180deg)'})
         }else{
-            $('.translator').removeClass('open');
             $('.translator .trans_box').slideUp();
-
+            $('.translator').removeClass('open');
+            $("#arr").css({'transform':'rotateZ(0)'})
         }
         return false;
     });
 
-    $('body').on({'click':function(){
-        if( $('.translator').attr('class').indexOf('open') != -1 ){
-            $('.translator').removeClass('open');
-            $('.translator .trans_box').slideUp();
-        }
-    }})
+
 
 
 /*===  CONTACT 양식               ====*/
@@ -285,17 +281,37 @@ $(document).on('click','.pop_blind',function(){
 
         };
     };
-
+/*===           아이콘 이동 함수           ====*/
+function moveIcon(){
+  var trans = $('.translator').html();
+  var muteI = $('.mute').html();
+  if($(window).width() < 767){
+    $('.translator').remove();
+    $('.mute').remove();
+    $('.social-icon').prepend('<div class="translator">'+trans+'</div>');
+    $('.social-icon').prepend('<div class="mute">'+muteI+'</div>');
+  }else{
+    $('.translator').remove();
+    $('.mute').remove();
+    $('.home-right .card__front').prepend('<div class="translator">'+trans+'</div>');
+    $('.home-right .card__front').prepend('<div class="mute">'+muteI+'</div>');
+  }
+}
+moveIcon();
 /*===           리사이즈 이벤트            ====*/
     $(window).resize(function(){
+
         /*===           스크롤 함수 실행             ====*/
         scBtn();
+
         /*===           사이즈 보정             ====*/
         if($(window).width() > 767)$('.pri_sum').css('height',$('.sum_left').height());
         else $('.pri_sum').css('height',$('.sum_left').height() + $('.sum_right').height());
-        /*===           스크롤 숨기기            ====*/
 
+        /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
+        /*===           아이콘 이동 함수 실행            ====*/
+        moveIcon();
     });
 /*===           스크롤 이벤트            ====*/
     $('.aboutMe-body').scroll(function(){

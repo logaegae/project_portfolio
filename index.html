@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="css/animate.min.css">
 
 		<!-- ========== Bootstrap core CSS ========== -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
 
 		<!-- ========== Style CSS ========== -->
         <link rel="stylesheet" href="css/style.css">
@@ -75,7 +75,7 @@
 
     		<!-- 비디오 -->
 
-    		<video autoplay="" id="bgvid" onended="run()">
+    		<video autoplay="" id="bgvid" onended="run()" muted="">
     			<source src="images/myintro.mp4" type="video/mp4">
 
     		</video>
@@ -92,7 +92,7 @@
     											<li class="facebook"><a ><i class="fa fa-facebook"></i></a></li>
     											<li class="twitter"><a ><i class="fa fa-twitter"></i></a></li>
     										</ul>
-                                            <span id="sns_mes"></br>준비중입니다</span>
+                                            <span id="sns_mes">준비중입니다</span>
     									</div>
 
 
@@ -102,7 +102,7 @@
 
     										</div>
 
-    										<p class="home-content"><span class="Fst">안녕하세요!</span><br><span class="Sec">김범영의 포트폴리오 페이지입니다 </span><br><span class="Thr">저는 코딩을 사랑하는 웹 퍼블리셔입니다</span></p>
+    										<h1><p class="home-content"><span class="Fst">안녕하세요!</span><br><span class="Sec">김범영의 포트폴리오 페이지입니다 </span><br><span class="Thr">저는 코딩을 사랑하는 웹 퍼블리셔입니다</span></p></h1>
     										<a class="open-about-btn">포트폴리오</a>
     										<a class="open-contact-btn" id="contact-map" href="#animatedModal">연락하기</a>
     									</div>
@@ -120,7 +120,7 @@
 
 
     										<div class="about-title">
-    											<h3>포트폴리오</h3>
+    											<h2 style="color:#333;font-size:35px;">포트폴리오</h2>
     											<span class="line"></span>
     										</div>
                                             <div class="about-wrap-wrap">
@@ -134,7 +134,7 @@
                                                                         <dl>
                                                                             <dt>코카콜라</dt>
                                                                             <dd>퍼블리싱 트레이싱</dd>
-                                                                            <dd>2016.07</dd>
+                                                                            <dd style="font-size:16px;">2016.07</dd>
                                                                         </dl>
                                                                     </div>
                                                                 </div>
@@ -147,8 +147,8 @@
                                                                     <div class="blind">
                                                                         <dl>
                                                                             <dt style="font-size:18px;">NILLA NILLA VANILLA</dt>
-                                                                            <dd style="font-size:18px;">쇼핑몰 솔루션 퍼블리싱</dd>
-                                                                            <dd>2016.06</dd>
+                                                                            <dd style="font-size:16px;">쇼핑몰 솔루션 퍼블리싱</dd>
+                                                                            <dd style="font-size:16px;">2016.07</dd>
                                                                         </dl>
                                                                     </div>
                                                                 </div>
@@ -162,7 +162,7 @@
                                                                           <dl>
                                                                               <dt style="font-size:18px;">JYP TWICE</dt>
                                                                               <dd style="font-size:18px;">퍼블리싱 트레이싱</dd>
-                                                                              <dd>2016.06</dd>
+                                                                              <dd style="font-size:16px;">2016.06</dd>
                                                                           </dl>
                                                                       </div>
                                                                   </div>
@@ -176,7 +176,7 @@
                                                                       <dl>
                                                                           <dt style="font-size:18px;">NAVER NEWS</dt>
                                                                           <dd style="font-size:18px;">퍼블리싱 트레이싱</dd>
-                                                                          <dd>2016.05</dd>
+                                                                          <dd style="font-size:16px;">2016.05</dd>
                                                                       </dl>
                                                                   </div>
                                                               </div>
@@ -191,7 +191,7 @@
                                                                         <dl>
                                                                             <dt style="font-size:18px;">경희의료원</dt>
                                                                             <dd style="font-size:18px;">웹리뉴얼 기획</dd>
-                                                                            <dd>2016.04</dd>
+                                                                            <dd style="font-size:16px;">2016.04</dd>
                                                                         </dl>
                                                                     </div>
                                                                 </div>
@@ -228,10 +228,10 @@
     								<div class="card__front right-side-container">
 
                                         <div class="mute">
-                                            <i id="megaIcon" class="icon-megaphone"></i>
+                                            <i id="megaIcon" class="icon-megaphone-mute"></i>
                                         </div>
 
-    								    <div class="translator"><a href="index.html">KOREAN ▼</a>
+    								    <div class="translator"><a>KOREAN <span id="arr">▼</span></a>
         								    <div class="trans_box">
         								        <div><a href="index.html">ENGLISH</a></div>
         								        <div><a href="">CHINESE</a></div>
@@ -240,7 +240,7 @@
 
     									<div class="right-content">
 
-                                            <h2>방문해주셔서 감사합니다</h2>
+                                            <h1>방문해주셔서 감사합니다</h1>
 
     										<p class="notify">제가 궁금하시다면</p>
 
@@ -249,7 +249,7 @@
 
                                         <footer>
                                             서울특별시 종로구 숭인동길21 104-306 / TEL 010-9004-5938</br>
-                                            2016 Copyright 김범영
+                                            2016 Copyright <a id="footL" href="http://logaegae.cafe24.com">logaegae.cafe24.com</a>
                                         </footer>
     								</div>
 
@@ -262,7 +262,7 @@
 
     										<div class="aboutMe-section">
 
-    											<h3> 프로필 </h3>
+    											<h2 style="font-size:35px;"> 프로필 </h2>
                                                 <span class="line"></span>
     											<div class="aboutMe-content">
 
@@ -279,7 +279,7 @@
 
                                                         <div class="pro_sec" id="sec1">
                                                             <div class="tit_wrap" id="tit1">
-                                                                <div class="tit" title="모던 웹페이지를 제작합니다">
+                                                                <div class="tit" data-tooltip-text="모던 웹페이지를 제작합니다">
                                                                     <i class="icon-coding svg" style="font-size:40px;"></i>
                                                                 </div>
                                                             </div>
@@ -292,7 +292,7 @@
                                                         </div>
                                                         <div class="pro_sec" id="sec2">
                                                             <div class="tit_wrap" id="tit2">
-                                                                <div class="tit" title="하이미디어 웹퍼블리셔 수료">
+                                                                <div class="tit" data-tooltip-text="하이미디어 웹퍼블리셔 수료">
                                                                     <i class="icon-diploma svg" style="font-size:40px;"></i>
                                                                 </div>
                                                             </div>
@@ -305,7 +305,7 @@
                                                         </div>
                                                         <div class="pro_sec" id="sec3">
                                                             <div class="tit_wrap" id="tit3">
-                                                                <div class="tit" title="W3C 웹표준을 준수합니다">
+                                                                <div class="tit" data-tooltip-text="W3C 웹표준을 준수합니다">
                                                                     <i class="icon-earth-globe svg" style="font-size:45px;"></i>
                                                                 </div>
                                                             </div>
@@ -318,7 +318,7 @@
                                                         </div>
                                                         <div class="pro_sec" id="sec4">
                                                             <div class="tit_wrap" id="tit4">
-                                                                <div class="tit" title="반응형/모바일 호환을 다룹니다">
+                                                                <div class="tit" data-tooltip-text="반응형/모바일 호환을 다룹니다">
                                                                     <i class="icon-technology svg" style="font-size:55px;"></i>
                                                                 </div>
                                                             </div>
@@ -331,7 +331,7 @@
                                                         </div>
                                                         <div class="pro_sec" id="sec5">
                                                             <div class="tit_wrap" id="tit5">
-                                                                <div class="tit" title="혁신과 효율을 추구합니다">
+                                                                <div class="tit" data-tooltip-text="혁신과 효율을 추구합니다">
                                                                     <i class="icon-idea svg" style="font-size:40px;"></i>
                                                                 </div>
                                                             </div>
@@ -344,14 +344,14 @@
                                                         </div>
                                                         <div class="pro_sec" id="sec6">
                                                             <div class="tit_wrap" id="tit6">
-                                                                <div class="tit" title="업무의 완성을 책임지겠습니다">
+                                                                <div class="tit" data-tooltip-text="업무의 완성도를 중시합니다">
                                                                     <i class="icon-settings svg" style="font-size:45px;"></i>
                                                                 </div>
                                                             </div>
                                                             <div class="con_wrap" style="float:left;margin-left:100px;">
                                                                 <dl>
                                                                     <dt>책임감</dt>
-                                                                    <dd>업무의 완성을 책임지겠습니다</dd>
+                                                                    <dd>업무의 완성도를 중시합니다</dd>
                                                                 </dl>
                                                             </div>
                                                         </div>
@@ -400,7 +400,7 @@
                                     var map = new google.maps.Map(document.getElementById('map'), {
                                       center: myposition,
                                       scrollwheel: false,
-                                      zoom: 13
+                                      zoom: 14
                                     });
                                     // Create a marker and set its position.
                                     var marker = new google.maps.Marker({
