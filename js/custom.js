@@ -228,23 +228,26 @@ $('.social-icon li a').click(function(){
     })
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
-      var idx = $(this).parent('.content_box').index();
+        var idx = $(this).parent('.content_box').index();
+        
+        /*===           JSON            ====*/
+        $.getJSON("json/list.json",function(data){
+            
+        var bgurl = data.list[idx].bgname;
         var insert = '<div class="pop_blind">';
         insert += '<div class="shadow">';
         insert += '<div class="popUP">';
         insert += '<span class="flaticon-back"></span><span class="flaticon-next"></span>';
         insert += '<div class="pop_contents row">';
-        insert += '<div class="leftB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div><div class="rightB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div>';
+        insert += '<div class="leftB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding" style="background-image:url(images/'+bgurl+')"></div>';
+        insert += '<div class="rightB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div>';
         insert += '</div></div></div></div>';
-        
-        /*===           JSON            ====*/
-        $.getJSON("json/list.json",function(data){
-          console.log(data+"입니다");console.log('나와라')
-
+        $('section').append(insert);
         });
-
+        
+        
         /*===           팝업 에니메이션 / 정렬            ====*/
-        $('section').append(insert).find('.pop_blind').fadeIn(400,function(){
+        $('section').find('.pop_blind').fadeIn(400,function(){
 
             $('.shadow').css({
               'height':'50%',
