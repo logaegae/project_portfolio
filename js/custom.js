@@ -7,23 +7,7 @@ function run(){
 };
 
 jQuery(document).ready(function() {
-/*===           이미지, 아이콘 이동 함수            ====*/
-    // function moveImgs(){
-    //
-    //
-    //         if($(window).width() > 1150){
-    //             $('.photo_wrap').css('transform','translate3d(0,0,0)');
-    //             $('.pro_photo').css({'width':'300px','height':'300px'});
-    //
-    //         }else if ($(window).width() < 1150 && $(window).width() >= 767){
-    //             $('.photo_wrap').css('transform','translate3d(0,-80px,0)');
-    //             $('.pro_photo').css({'width':'200px','height':'200px'});
-    //         }else if($(window).width() < 767){
-    //             $('.photo_wrap').css('transform','translate3d(0,0,0)');
-    //             $('.pro_photo').css({'width':'300px','height':'300px'});
-    //         }
-    //
-    // }
+
 /*===      WOW Js        ===*/
     new WOW().init();
 
@@ -252,16 +236,13 @@ $('.social-icon li a').click(function(){
         insert += '<div class="pop_contents row">';
         insert += '<div class="leftB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div><div class="rightB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div>';
         insert += '</div></div></div></div>';
+        
         /*===           JSON            ====*/
-        WebSettings settings = webViewExample.getSettings();
-        settings.setAllowFileAccessFromFileURLs(true);
-        settings.setAllowUniversalAccessFromFileURLs(true);
-
-
         $.getJSON("json/list.json",function(data){
-          console.log(data);
+          console.log(data+"입니다");console.log('나와라')
 
         });
+
         /*===           팝업 에니메이션 / 정렬            ====*/
         $('section').append(insert).find('.pop_blind').fadeIn(400,function(){
 
