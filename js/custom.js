@@ -244,20 +244,30 @@ $('.social-icon li a').click(function(){
     })
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
+      var idx = $(this).parent('content_box').index();
+      console.log(idx);
         var insert = '<div class="pop_blind">';
         insert += '<div class="shadow">';
-        insert += '<div class="popUP"></div>';
-        insert += '</div></div>';
-        $('section').append(insert).find('.pop_blind').fadeIn(500,function(){
+        insert += '<div class="popUP">';
+        insert += '<span class="flaticon-back"></span><span class="flaticon-next"></span>';
+        insert += '<div class="pop_contents"></div>';
+        insert += '</div></div></div>';
 
-          $('.shadow').css({
-            'left':'25%',
-            'top':'25%',
-            'width':'50%',
-            'height':'50%'
-          });
+        $('section').append(insert).find('.pop_blind').fadeIn(400,function(){
+
+            $('.shadow').css({
+              'height':'50%',
+              'width':'50%',
+              'minWidth':'320px',
+              'top':'25%',
+              'left':'50%',
+              'marginLeft':-$(window).width() / 4
+            });
+
           $('.popUP').show();
         });
+
+
     });
  /*===           팝업 닫기            ====*/
 $(document).on('click','.pop_blind',function(){
@@ -297,7 +307,7 @@ function moveIcon(){
     $('.home-right .card__front').prepend('<div class="mute">'+muteI+'</div>');
   }
 }
-moveIcon();
+
 /*===           리사이즈 이벤트            ====*/
     $(window).resize(function(){
 
@@ -312,6 +322,11 @@ moveIcon();
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
+        /*===           팝업창 이동            ====*/
+        $('.shadow').stop().animate({
+          'marginLeft':-$(window).width() / 4
+        });
+        console.log($('.shadow').css('marginLeft'))
     });
 /*===           스크롤 이벤트            ====*/
     $('.aboutMe-body').scroll(function(){
