@@ -1,0 +1,43 @@
+{
+  "list":[
+    {
+    "name":"CocaCola",
+    "about":"웹퍼블리싱</br>공동작업으로 팀장역할 수행</br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+    "period":"2016.07(10일간)",
+    "skill":"HTML/CSS,Javascript,JQuery,SVN,Redmine",
+    "link":"http://pf.i-make.kr:8080/CocaCola/html/main/main.jsp",
+    "GitHub":"https://github.com/logaegae/xx.git"
+    },
+    {
+      "name":"Nilla Nilla Vanilla",
+      "about":"홈쇼핑 퍼스트몰 메인페이지 웹퍼블리싱",
+      "period":"2016.06(5일간)",
+      "skill":"HTML/CSS,Javascript,JQuery",
+      "link":"http://nillavanilla.firstmall.kr",
+      "GitHub":"https://github.com/logaegae/xx.git"
+    },
+    {
+      "name":"JYP Twice",
+      "about":"웹퍼블리싱</br>반응형/CSS3 연습</br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+      "period":"2016.06(5일간)",
+      "skill":"HTML/CSS,Javascript,JQuery,LESS",
+      "link":"http://",
+      "GitHub":"https://github.com/logaegae/xx.git"
+    },
+    {
+      "name":"Naver News",
+      "about":"웹퍼블리싱 트레이싱</br>HTML/CSS,레이아웃 연습</br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+      "period":"2016.05(3일간)",
+      "skill":"HTML/CSS",
+      "link":"http://nillavanilla.firstmall.kr",
+      "GitHub":"https://github.com/logaegae/xx.git"
+    },
+    {
+      "name":"경희의료원",
+      "about":"웹리뉴얼 기획</br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+      "skill":"Axure,Photoshop,Illustrator",
+      "period":"2016.04(5일간)",
+      "link":"http://nillavanilla.firstmall.kr",
+    }
+  ]
+}

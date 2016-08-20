@@ -244,15 +244,25 @@ $('.social-icon li a').click(function(){
     })
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
-      var idx = $(this).parent('content_box').index();
-      console.log(idx);
+      var idx = $(this).parent('.content_box').index();
         var insert = '<div class="pop_blind">';
         insert += '<div class="shadow">';
         insert += '<div class="popUP">';
         insert += '<span class="flaticon-back"></span><span class="flaticon-next"></span>';
-        insert += '<div class="pop_contents"></div>';
-        insert += '</div></div></div>';
+        insert += '<div class="pop_contents row">';
+        insert += '<div class="leftB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div><div class="rightB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div>';
+        insert += '</div></div></div></div>';
+        /*===           JSON            ====*/
+        WebSettings settings = webViewExample.getSettings();
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(true);
 
+
+        $.getJSON("json/list.json",function(data){
+          console.log(data);
+
+        });
+        /*===           팝업 에니메이션 / 정렬            ====*/
         $('section').append(insert).find('.pop_blind').fadeIn(400,function(){
 
             $('.shadow').css({
@@ -260,9 +270,11 @@ $('.social-icon li a').click(function(){
               'width':'50%',
               'minWidth':'320px',
               'top':'25%',
-              'left':'50%',
-              'marginLeft':-$(window).width() / 4
+              'left':'50%'
             });
+
+            if($(window).width() / 2 > 320) $('.shadow').css({'marginLeft':-$(window).width() / 4});
+            else $('.shadow').css({'marginLeft':-160+'px'});
 
           $('.popUP').show();
         });
@@ -284,7 +296,7 @@ $(document).on('click','.pop_blind',function(){
             }else $('.home-right .sc_btn img').fadeOut(2000);
 
         }
-        else if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
+        if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
             if( $('.about-wrap').height() < $('.about-content').outerHeight(true) ){
                 $('.home-left .sc_btn img').fadeIn(1000);
             }else $('.home-left .sc_btn img').fadeOut(2000);
@@ -323,10 +335,14 @@ function moveIcon(){
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
         /*===           팝업창 이동            ====*/
-        $('.shadow').stop().animate({
-          'marginLeft':-$(window).width() / 4
-        });
-        console.log($('.shadow').css('marginLeft'))
+        if($('.shadow').width() !=320){
+          $('.shadow').stop().animate({
+            'marginLeft':-$(window).width() / 4
+          });
+        }else $('.shadow').stop().animate({'marginLeft':-160+'px'});
+
+
+
     });
 /*===           스크롤 이벤트            ====*/
     $('.aboutMe-body').scroll(function(){

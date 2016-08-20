@@ -47,9 +47,9 @@ video{display:block}@media screen and (max-device-width:480px){body{background:u
 .img_content{border-radius:50%;margin-top:10px;overflow:hidden; display:inline-block;width:230px;height:230px;background-repeat: no-repeat;-webkit-background-size: 200%;background-size: 200%;transition:1s;}
 .blind{height:100px;width:230px; margin-top:230px; background-color: rgba(0, 0, 0, 0.5);}
 .pop_blind{display:none;position:fixed;bottom:0;top:0;left:0;right:0;background-color: rgba(0, 0, 0, 0.5);z-index:10;}
-.popUP{border-radius: 10px;margin:0 auto; background-color: #FFF;width:100%;height:100%;z-index:11;display:none;min-width:320px;position:relative;}
+.popUP{padding:5% 34px;border-radius: 10px;margin:0 auto; background-color: #FFF;width:100%;height:100%;z-index:11;display:none;min-width:320px;position:relative;}
 .shadow{border-radius: 10px;position:fixed;left:0;top:0;width:0%; height:0%;box-shadow :0 0 100px #000; background-color: rgba(0, 0, 0, 0.8);transition:900ms ease;}
-.pop_contents{width:80%;height:80%;margin:10% auto;border:1px #F00 solid;overflow:hidden;}
+.pop_contents{width:100%;height:100%;margin: 0 auto;overflow:hidden;}
 .blind dl{color:#FFF;padding-top:5px;}
 .blind dt{font-size:20px;font-weight: 500;}
 .blind dd{font-size:18px;font-weight: 500;}
@@ -89,9 +89,10 @@ video{display:block}@media screen and (max-device-width:480px){body{background:u
 footer{position:absolute;text-align:right;padding-right:40px;padding-bottom:10px;bottom:0;width:100%;color:#AAA;font-family:"Noto Sans KR";font-size:12px;line-height:14px;}
 #sns_mes{color:#fbc545;display:none;position:absolute;width:80px;height:20px;}
 [data-tooltip-text]:hover{position: relative;}
-[data-tooltip-text]:after{padding:5px;border-radius: 5px;width: auto; word-wrap: break-word;white-space: pre;position: absolute; background-color: rgba(231, 177, 49, 0.8);color: #FFFFFF;	font-size: 12px; z-index: 999; transition:ease 1000ms; opacity:0;height: 30px; line-height: 24px;}
+[data-tooltip-text]:after{padding:5px;border-radius: 5px;width: auto; word-wrap: break-word;white-space: pre;position: absolute; background-color: rgba(231, 177, 49, 0.8);color: #FFFFFF;	font-size: 13px; z-index: 999; transition:ease 1000ms; opacity:0;height: 30px; line-height: 24px;}
 [data-tooltip-text]:hover:after {	content: attr(data-tooltip-text); top: 110%; left:0;opacity:1}
 .social-icon ul{display:inline-block;}
 .flaticon-back,.flaticon-next{position:absolute;top:50%;margin-top:-20px;cursor:pointer;}
-.flaticon-next{right:10px;}
-.flaticon-back{left:10px;}
+.flaticon-next{right:0;text-align: right;}
+.flaticon-back{left:0;text-align: left;}
+.rightB{padding:15px;}
