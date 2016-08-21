@@ -412,9 +412,7 @@ $(document).on('click','.flaticon-back',function(){
         },function(){
              $('.pop_contents ul').css({'left':($('.content_box').length) * -unit });
         });
-        
-    }
-    
+    };
 });
 
 /*===           리사이즈 이벤트            ====*/
