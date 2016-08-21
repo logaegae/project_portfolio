@@ -104,5 +104,8 @@ footer{position:absolute;text-align:right;padding-right:40px;padding-bottom:10px
 .popUP_box{position:relative;width:100%;height:100%;overflow:hidden;}
 .pop_contents ul{height:100%;position:relative;}
 .pop_contents ul li{display:inline-block;height:100%;}
-#link,#Github{word-break:break-all;
-}
+#link,#Github{word-break:break-all;}
+.cross-btn{position:absolute;top:0px;right:6px;cursor:pointer;}
+.cross-btn img{width:20px;height:20px;}
+.pop_sc{position:absolute;bottom:0;text-align:center;width:100%;height:15px;left:0;}
+.pop_sc img{width:20px;height:20px;margin-top:-11px;display:none;}

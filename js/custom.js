@@ -226,14 +226,14 @@ $('.social-icon li a').click(function(){
             }
         }
     })
-
+    
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
         var idx = $(this).parent('.content_box').index();
         var insert = '<div class="pop_blind">';
         insert += '<div class="shadow">';
         insert += '<div class="popUP">';
-        insert += '<span class="flaticon-back"></span><span class="flaticon-next"></span>';
+        insert += '<span class="cross-btn"><img src="images/cross-out.svg"></span><span class="flaticon-back"></span><span class="flaticon-next"></span><span class="pop_sc"><img src="images/scroll.svg" style="display: inline;"></span>';
         insert += '<div class="popUP_box">';
         insert += '<div class="pop_contents">';
         insert += '<ul>';
@@ -261,7 +261,7 @@ $('.social-icon li a').click(function(){
                     $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[0].period);
                     $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[0].skill);
                     $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[0].link+'">'+data.list[0].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[0].GitHub);
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[0].repository+'">'+data.list[0].repository+'</a>');
                 }else if(i == 0){
                     bgurl = data.list[data.list.length - 1].bgname;
                     $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
@@ -270,7 +270,7 @@ $('.social-icon li a').click(function(){
                     $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[data.list.length - 1].period);
                     $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[data.list.length - 1].skill);
                     $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[data.list.length - 1].link+'">'+data.list[data.list.length - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[data.list.length - 1].GitHub);
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[data.list.length - 1].repository+'">'+data.list[data.list.length - 1].repository+'</a>');
                 }
                 else{
                     bgurl = data.list[i - 1].bgname;
@@ -280,7 +280,7 @@ $('.social-icon li a').click(function(){
                     $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[i - 1].period);
                     $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[i - 1].skill);
                     $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[i - 1].link+'">'+data.list[i - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[i - 1].GitHub);
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[i - 1].repository+'">'+data.list[i - 1].repository+'</a>');
                 }
             }
         });
@@ -302,17 +302,22 @@ $('.social-icon li a').click(function(){
             ulWidth();
             /*===           화면 맞추기            ====*/
             ulLeft(idx + 1);
+            
             $('.pop_contents ul li').eq(idx + 1).addClass('sOn').siblings().removeClass('sOn');
+            scBtn();
             $('.popUP').show();
+            setTimeout(function(){
+                scBtn();
+            },1300);
         });
     });
 
  /*===           팝업 닫기            ====*/
-// $(document).on('click','.pop_blind',function(){
-//   $('.pop_blind').fadeOut(500,function(){
-//     $('.pop_blind').remove();
-//   })
-// })
+$(document).on('click','.cross-btn',function(){
+  $('.pop_blind').fadeOut(500,function(){
+    $('.pop_blind').remove();
+  })
+})
  /*===           슬라이드 li width 계산 함수            ====*/
 function liWidth(){
     var wid = null;
@@ -324,7 +329,6 @@ function liWidth(){
 function ulWidth(){
     var wid = liWidth();
     $('.pop_contents ul').css('width',wid * ($('.pop_contents ul li').length + 1))
-
  }
 /*===           슬라이드 ul left 계산 함수            ====*/
 function ulLeft(index){
@@ -346,22 +350,26 @@ function slideMove(target,amount){
     if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
     else $('.shadow').css({'marginTop':-240+'px'});
  }
-/*===           스크롤 버튼 함수            ====*/
-    function scBtn(){
+/*===           스크롤 버튼 나와라 함수            ====*/
+function scBtn(){
 
-        if( $('.home-right .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
-            if( $('.aboutMe-body').height() < $('.aboutMe-section').outerHeight(true) ){
-                $('.home-right .sc_btn img').fadeIn(1000);
-            }else $('.home-right .sc_btn img').fadeOut(2000);
-
-        }
-        if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
-            if( $('.about-wrap').height() < $('.about-content').outerHeight(true) ){
-                $('.home-left .sc_btn img').fadeIn(1000);
-            }else $('.home-left .sc_btn img').fadeOut(2000);
-
+    if( $('.home-right .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
+        if( $('.aboutMe-body').height() < $('.aboutMe-section').outerHeight(true) ){
+            $('.home-right .sc_btn img').fadeIn(1000);
+        }else $('.home-right .sc_btn img').fadeOut(2000);
+    };
+    
+    if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
+        if( $('.about-wrap').height() < $('.about-content').outerHeight(true) ){
+            $('.home-left .sc_btn img').fadeIn(1000);
+        }else $('.home-left .sc_btn img').fadeOut(2000);
+        if($('.sOn .rightB').outerHeight(true) < $('.sOn .rightB p').outerHeight(true)){
+        $('.pop_sc img').fadeIn(500);
+        }else{
+            $('.pop_sc img').fadeOut(500);
         };
     };
+};
 /*===           아이콘 이동 함수           ====*/
 function moveIcon(){
   var trans = $('.translator').html();
@@ -377,6 +385,20 @@ function moveIcon(){
     $('.home-right .card__front').prepend('<div class="translator">'+trans+'</div>');
     $('.home-right .card__front').prepend('<div class="mute">'+muteI+'</div>');
   }
+}
+/*===           스크롤 함수            ====*/
+function scFn(mother,son,scroll,target){
+    
+    var sc_target = mother.outerHeight(true) + scroll;
+    var sc_sum = son.outerHeight(true);
+    console.log(sc_target,sc_sum);
+    if( scroll == 0){ target.stop().fadeOut(400,function(){
+       target.css('transform','rotateX(0)').fadeIn(400);
+    });
+    }else if( sc_target == sc_sum ){ target.stop().fadeOut(400,function(){
+       target.css('transform','rotateX(180deg)').fadeIn(400);
+    });
+    }
 }
 /*===           팝업 NEXT BACK 버튼 클릭            ====*/
 $(document).on('click','.flaticon-next',function(){
@@ -434,34 +456,21 @@ $(document).on('click','.flaticon-back',function(){
         popcenter();
         /*===           팝업창 ul left 이동            ====*/
         ulLeft(idx);
-
     });
+
 /*===           스크롤 이벤트            ====*/
     $('.aboutMe-body').scroll(function(){
-
-        var sc_target = $('.aboutMe-body').height() + $(this).scrollTop();
-        var sc_sum = $('.aboutMe-section').outerHeight(true);
-
-           if( $(this).scrollTop() == 0){ $('.home-right .sc_btn img').stop().fadeOut(400,function(){
-               $('.home-right .sc_btn img').css('transform','rotateX(0)').fadeIn(400);
-            });
-            }else if( sc_target == sc_sum ){ $('.home-right .sc_btn img').stop().fadeOut(400,function(){
-               $('.home-right .sc_btn img').css('transform','rotateX(180deg)').fadeIn(400);
-            });
-            }
+        var scTop = $(this).scrollTop();
+        scFn($('.aboutMe-body'),$('.aboutMe-section'),scTop,$('.home-right .sc_btn img'));
     });
     $('.about-wrap').scroll(function(){
-
-        var sc_target = $('.about-wrap').height() + $(this).scrollTop();
-        var sc_sum = $('.about-content').outerHeight(true);
-
-           if( $(this).scrollTop() == 0){ $('.home-left .sc_btn img').stop().fadeOut(400,function(){
-               $('.home-left .sc_btn img').css('transform','rotateX(0)').fadeIn(400);
-            });
-            }else if( sc_target == sc_sum ){ $('.home-left .sc_btn img').stop().fadeOut(400,function(){
-               $('.home-left .sc_btn img').css('transform','rotateX(180deg)').fadeIn(400);
-            });
-            }
+        var scTop = $(this).scrollTop();
+        scFn($('.about-wrap'),$('.about-content'),scTop,$('.home-left .sc_btn img'));
     });
-
+    $(document).on('scroll','.sOn .popcon_wrap',function(){
+            console.log('f');
+            var scTop = $('.sOn .popcon_wrap').scrollTop();
+            scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),scTop,$('.pop_sc img'));
+        }
+    )
 });

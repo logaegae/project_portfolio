@@ -7,7 +7,7 @@
     "period":"2016.07(10일간)",
     "skill":"HTML/CSS, Javascript, JQuery, SVN, Redmine",
     "link":"http://pf.i-make.kr:8080/CocaCola/html/main/main.jsp",
-    "GitHub":"https://github.com/logaegae/xx.git"
+    "repository":"http://svn.freeive.com/freeive/sc"
     },
     {
       "name":"Nilla Nilla Vanilla",
@@ -16,7 +16,7 @@
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery",
       "link":"http://nillavanilla.firstmall.kr",
-      "GitHub":"https://github.com/logaegae/xx.git"
+      "repository":"https://github.com/logaegae/xx.git"
     },
     {
       "name":"JYP Twice",
@@ -25,7 +25,7 @@
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery, LESS",
       "link":"http://",
-      "GitHub":"https://github.com/logaegae/xx.git"
+      "repository":"https://github.com/logaegae/xx.git"
     },
     {
       "name":"Naver News",
@@ -34,7 +34,7 @@
       "period":"2016.05(3일간)",
       "skill":"HTML/CSS",
       "link":"http://nillavanilla.firstmall.kr",
-      "GitHub":"https://github.com/logaegae/xx.git"
+      "repository":"https://github.com/logaegae/xx.git"
     },
     {
       "name":"경희의료원",
@@ -43,6 +43,6 @@
       "skill":"Axure, Photoshop, Illustrator",
       "period":"2016.04(5일간)",
       "link":"http://nillavanilla.firstmall.kr",
-      "GitHub":""
+      "repository":""
     }]
 }
