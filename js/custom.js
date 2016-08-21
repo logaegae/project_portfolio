@@ -243,7 +243,7 @@ $('.social-icon li a').click(function(){
         var insert = '';
             insert += '<li><div class="leftB"></div>';
             insert += '<div class="rightB">';
-            insert += '<div class="popcon_wrap" style="min-width:255px;min-height:215px;"><p><span id="title"></span><br><span id="about"></span><br><span id="period"></span><br><span id="skill"></span><br><span id="link"></span><br><span id="Github"></span></p></div>';
+            insert += '<div onscroll="" class="popcon_wrap" style="min-width:255px;min-height:215px;"><p><span id="title"></span><br><span id="about"></span><br><span id="period"></span><br><span id="skill"></span><br><span id="link"></span><br><span id="Github"></span></p></div>';
             insert += '</li>';
         /*===           슬라이드 콘텐츠 형성        ====*/
         for(i=0; i<$('.content_box').length + 2; i++){
@@ -257,30 +257,30 @@ $('.social-icon li a').click(function(){
                     bgurl = data.list[0].bgname;
                     $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
                     $('.pop_contents ul li').eq(i).find('#title').html(data.list[0].name);
-                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[0].about);
-                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[0].period);
-                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[0].skill);
-                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[0].link+'">'+data.list[0].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[0].repository+'">'+data.list[0].repository+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#about').html('<strong>작업내용</strong>: '+data.list[0].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('<strong>기간</strong>: '+data.list[0].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('<strong>활용기술</strong>: '+data.list[0].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+'<a target="_blank" href="'+data.list[0].link+'">'+data.list[0].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: <a target="_blank" href="'+data.list[0].repository+'">'+data.list[0].repository+'</a>');
                 }else if(i == 0){
                     bgurl = data.list[data.list.length - 1].bgname;
                     $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
                     $('.pop_contents ul li').eq(i).find('#title').html(data.list[data.list.length - 1].name);
-                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[data.list.length - 1].about);
-                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[data.list.length - 1].period);
-                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[data.list.length - 1].skill);
-                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[data.list.length - 1].link+'">'+data.list[data.list.length - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[data.list.length - 1].repository+'">'+data.list[data.list.length - 1].repository+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#about').html('<strong>작업내용</strong>: '+data.list[data.list.length - 1].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('<strong>기간</strong>: '+data.list[data.list.length - 1].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('<strong>활용기술</strong>: '+data.list[data.list.length - 1].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+'<a target="_blank" href="'+data.list[data.list.length - 1].link+'">'+data.list[data.list.length - 1].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: <a target="_blank" href="'+data.list[data.list.length - 1].repository+'">'+data.list[data.list.length - 1].repository+'</a>');
                 }
                 else{
                     bgurl = data.list[i - 1].bgname;
                     $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
                     $('.pop_contents ul li').eq(i).find('#title').html(data.list[i - 1].name);
-                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[i - 1].about);
-                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[i - 1].period);
-                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[i - 1].skill);
-                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[i - 1].link+'">'+data.list[i - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('Repository: <a target="_blank" href="'+data.list[i - 1].repository+'">'+data.list[i - 1].repository+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#about').html('<strong>작업내용</strong>: '+data.list[i - 1].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('<strong>기간</strong>: '+data.list[i - 1].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('<strong>활용기술</strong>: '+data.list[i - 1].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+'<a target="_blank" href="'+data.list[i - 1].link+'">'+data.list[i - 1].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: <a target="_blank" href="'+data.list[i - 1].repository+'">'+data.list[i - 1].repository+'</a>');
                 }
             }
         });
@@ -355,18 +355,18 @@ function scBtn(){
 
     if( $('.home-right .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
         if( $('.aboutMe-body').height() < $('.aboutMe-section').outerHeight(true) ){
-            $('.home-right .sc_btn img').fadeIn(1000);
-        }else $('.home-right .sc_btn img').fadeOut(2000);
+            $('.home-right .sc_btn img').stop().fadeIn(1000);
+        }else $('.home-right .sc_btn img').stop().fadeOut(2000);
     };
     
     if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
         if( $('.about-wrap').height() < $('.about-content').outerHeight(true) ){
-            $('.home-left .sc_btn img').fadeIn(1000);
-        }else $('.home-left .sc_btn img').fadeOut(2000);
+            $('.home-left .sc_btn img').stop().fadeIn(1000);
+        }else $('.home-left .sc_btn img').stop().fadeOut(2000);
         if($('.sOn .rightB').outerHeight(true) < $('.sOn .rightB p').outerHeight(true)){
-        $('.pop_sc img').fadeIn(500);
+        $('.pop_sc img').stop().fadeIn(500);
         }else{
-            $('.pop_sc img').fadeOut(500);
+            $('.pop_sc img').stop().fadeOut(500);
         };
     };
 };
@@ -391,7 +391,7 @@ function scFn(mother,son,scroll,target){
     
     var sc_target = mother.outerHeight(true) + scroll;
     var sc_sum = son.outerHeight(true);
-    console.log(sc_target,sc_sum);
+    // console.log(sc_target,sc_sum);
     if( scroll == 0){ target.stop().fadeOut(400,function(){
        target.css('transform','rotateX(0)').fadeIn(400);
     });
@@ -467,10 +467,10 @@ $(document).on('click','.flaticon-back',function(){
         var scTop = $(this).scrollTop();
         scFn($('.about-wrap'),$('.about-content'),scTop,$('.home-left .sc_btn img'));
     });
-    $(document).on('scroll','.sOn .popcon_wrap',function(){
+    $('body').on("scroll click",'.sOn .popcon_wrap',function(){
             console.log('f');
             var scTop = $('.sOn .popcon_wrap').scrollTop();
-            scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),scTop,$('.pop_sc img'));
-        }
-    )
+            console.log(scTop);
+            scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),$('.sOn .popcon_wrap').scrollTop(),$('.pop_sc img'));
+    });
 });
