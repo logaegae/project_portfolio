@@ -226,51 +226,126 @@ $('.social-icon li a').click(function(){
             }
         }
     })
+
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
         var idx = $(this).parent('.content_box').index();
-        
-        /*===           JSON            ====*/
-        $.getJSON("json/list.json",function(data){
-            
-        var bgurl = data.list[idx].bgname;
         var insert = '<div class="pop_blind">';
         insert += '<div class="shadow">';
         insert += '<div class="popUP">';
         insert += '<span class="flaticon-back"></span><span class="flaticon-next"></span>';
-        insert += '<div class="pop_contents row">';
-        insert += '<div class="leftB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding" style="background-image:url(images/'+bgurl+')"></div>';
-        insert += '<div class="rightB col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding"></div>';
-        insert += '</div></div></div></div>';
+        insert += '<div class="popUP_box">';
+        insert += '<div class="pop_contents">';
+        insert += '<ul>';
+        
+        insert += '</ul></div></div></div></div></div>';
         $('section').append(insert);
+        var insert = '';
+            insert += '<li><div class="leftB"></div>';
+            insert += '<div class="rightB">';
+            insert += '<div class="popcon_wrap" style="min-width:255px;min-height:215px;"><p><span id="title"></span><br><span id="about"></span><br><span id="period"></span><br><span id="skill"></span><br><span id="link"></span><br><span id="Github"></span></p></div>';
+            insert += '</li>';
+        /*===           슬라이드 콘텐츠 형성        ====*/
+        for(i=0; i<$('.content_box').length + 2; i++){
+            $('.pop_contents ul').append(insert);
+        }
+        /*===           JSON    다 불러오기        ====*/
+        $.getJSON("json/list.json",function(data){
+            var bgurl = '';
+            for(i=0;i<data.list.length + 2;i++){
+                if( i == data.list.length + 1){
+                    bgurl = data.list[0].bgname;
+                    $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
+                    $('.pop_contents ul li').eq(i).find('#title').html(data.list[0].name);
+                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[0].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[0].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[0].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[0].link+'">'+data.list[0].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[0].GitHub);
+                }else if(i == 0){
+                    bgurl = data.list[data.list.length - 1].bgname;
+                    $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
+                    $('.pop_contents ul li').eq(i).find('#title').html(data.list[data.list.length - 1].name);
+                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[data.list.length - 1].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[data.list.length - 1].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[data.list.length - 1].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[data.list.length - 1].link+'">'+data.list[data.list.length - 1].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[data.list.length - 1].GitHub);
+                }
+                else{
+                    bgurl = data.list[i - 1].bgname;
+                    $('.pop_contents ul li').eq(i).find('.leftB').css('backgroundImage','url("images/'+bgurl+'")');
+                    $('.pop_contents ul li').eq(i).find('#title').html(data.list[i - 1].name);
+                    $('.pop_contents ul li').eq(i).find('#about').html('작업내용: '+data.list[i - 1].about);
+                    $('.pop_contents ul li').eq(i).find('#period').html('기간: '+data.list[i - 1].period);
+                    $('.pop_contents ul li').eq(i).find('#skill').html('활용기술: '+data.list[i - 1].skill);
+                    $('.pop_contents ul li').eq(i).find('#link').html('보러가기: '+'<a target="_blank" href="'+data.list[i - 1].link+'">'+data.list[i - 1].link+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#Github').html('Git: '+data.list[i - 1].GitHub);
+                }
+            }
         });
-        
-        
+    
         /*===           팝업 에니메이션 / 정렬            ====*/
         $('section').find('.pop_blind').fadeIn(400,function(){
-
             $('.shadow').css({
               'height':'50%',
               'width':'50%',
               'minWidth':'320px',
-              'top':'25%',
+              'minHeight':'480px',
+              'top':'50%',
               'left':'50%'
             });
-
-            if($(window).width() / 2 > 320) $('.shadow').css({'marginLeft':-$(window).width() / 4});
-            else $('.shadow').css({'marginLeft':-160+'px'});
-
-          $('.popUP').show();
+            popcenter();
+            /*===           스크롤 숨기기            ====*/
+            $('.rightB .popcon_wrap').css({'width':$(window).width() / 2 - 66+'px','height':$(window).height() * 0.2});
+            /*===           사이즈 보정            ====*/
+            ulWidth();
+            /*===           화면 맞추기            ====*/
+            ulLeft(idx + 1);
+            $('.pop_contents ul li').eq(idx + 1).addClass('sOn').siblings().removeClass('sOn');
+            $('.popUP').show();
         });
-
-
     });
+
  /*===           팝업 닫기            ====*/
-$(document).on('click','.pop_blind',function(){
-  $('.pop_blind').fadeOut(500,function(){
-    $('.pop_blind').remove();
-  })
-})
+// $(document).on('click','.pop_blind',function(){
+//   $('.pop_blind').fadeOut(500,function(){
+//     $('.pop_blind').remove();
+//   })
+// })
+ /*===           슬라이드 li width 계산 함수            ====*/
+function liWidth(){
+    var wid = null;
+    if($(window).width() / 2 - 36 > 285) wid = $(window).width() / 2 - 36;
+    else wid = 285;
+    return wid;
+}
+ /*===           슬라이드 ul 계산 함수            ====*/
+function ulWidth(){
+    var wid = liWidth();
+    $('.pop_contents ul').css('width',wid * ($('.pop_contents ul li').length + 1))
+
+ }
+/*===           슬라이드 ul left 계산 함수            ====*/
+function ulLeft(index){
+    var leftW = liWidth();
+    $('.pop_contents ul').css('left',index * -leftW)
+}
+/*===           슬라이드 버튼 클릭시 이동 함수            ====*/
+function slideMove(target,amount){
+    var unit = liWidth();
+    var pre = parseInt($(target).css('left'));
+    $(target).stop().animate({
+        'left':(pre + (-1*amount * unit))+'px'
+    });
+}
+ /*===           팝업 정렬 함수            ====*/
+ function popcenter(){
+    if($(window).width() / 2 > 320) $('.shadow').css({'marginLeft':-$(window).width() / 4});
+    else $('.shadow').css({'marginLeft':-160+'px'});
+    if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
+    else $('.shadow').css({'marginTop':-240+'px'});
+ }
 /*===           스크롤 버튼 함수            ====*/
     function scBtn(){
 
@@ -303,29 +378,64 @@ function moveIcon(){
     $('.home-right .card__front').prepend('<div class="mute">'+muteI+'</div>');
   }
 }
+/*===           팝업 NEXT BACK 버튼 클릭            ====*/
+$(document).on('click','.flaticon-next',function(){
+    var idx = $('.sOn').index();
+    
+    if(idx != $('.content_box').length){
+        $('.pop_contents ul li').eq(idx+1).addClass('sOn').siblings().removeClass('sOn')
+        slideMove('.pop_contents ul',1);
+    }else if(idx == $('.content_box').length){
+        $('.pop_contents ul li').eq(1).addClass('sOn').siblings().removeClass('sOn');
+        var unit = liWidth();
+        var pre = parseInt($('.pop_contents ul').css('left'));
+        $('.pop_contents ul').stop().animate({
+            'left':(pre + (-1 * unit))+'px'
+        },function(){
+             $('.pop_contents ul').css({'left': -unit});
+        });
+        
+    }
+});
+$(document).on('click','.flaticon-back',function(){
+    var idx = $('.sOn').index();
+    
+    if(idx != 1){
+        $('.pop_contents ul li').eq(idx - 1).addClass('sOn').siblings().removeClass('sOn')
+        slideMove('.pop_contents ul',-1);
+    }else if(idx == 1){
+        $('.pop_contents ul li').eq($('.content_box').length).addClass('sOn').siblings().removeClass('sOn');
+        var unit = liWidth();
+        var pre = parseInt($('.pop_contents ul').css('left'));
+        $('.pop_contents ul').stop().animate({
+            'left':(pre + (unit))+'px'
+        },function(){
+             $('.pop_contents ul').css({'left':($('.content_box').length) * -unit });
+        });
+        
+    }
+    
+});
 
 /*===           리사이즈 이벤트            ====*/
     $(window).resize(function(){
-
+        var idx = $('.sOn').index();
         /*===           스크롤 함수 실행             ====*/
         scBtn();
 
         /*===           사이즈 보정             ====*/
         if($(window).width() > 767)$('.pri_sum').css('height',$('.sum_left').height());
         else $('.pri_sum').css('height',$('.sum_left').height() + $('.sum_right').height());
-
+        ulWidth();
         /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
+        $('.rightB .popcon_wrap').css({'width':$(window).width() / 2 - 66+'px','height':$(window).height() * 0.2});
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
         /*===           팝업창 이동            ====*/
-        if($('.shadow').width() !=320){
-          $('.shadow').stop().animate({
-            'marginLeft':-$(window).width() / 4
-          });
-        }else $('.shadow').stop().animate({'marginLeft':-160+'px'});
-
-
+        popcenter();
+        /*===           팝업창 ul left 이동            ====*/
+        ulLeft(idx);
 
     });
 /*===           스크롤 이벤트            ====*/
