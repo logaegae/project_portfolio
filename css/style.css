@@ -40,7 +40,7 @@ video{display:block}@media screen and (max-device-width:480px){body{background:u
 .translator a:focus, #footL:focus {color:#fbc545;}
 .aboutMe-body>div{display:none;}
 .about-body>div{}
-.about-content{ text-align: center;}
+.about-content{ text-align: center;margin-bottom: 65px;}
 #arr{transition:700ms;display:inline-block;font-size: 14px; height: 27px;}
 .trans_box{padding-left:10px;display:none;position:absolute;}
 .img_wrap{margin-top:20px; display:inline-block; cursor:pointer; border-radius:50%; overflow:hidden; width: 250px;height: 250px;background-color: #333;text-align:center;}

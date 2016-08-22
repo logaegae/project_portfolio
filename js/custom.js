@@ -469,9 +469,9 @@ $(document).on('click','.flaticon-back',function(){
         scFn($('.about-wrap'),$('.about-content'),scTop,$('.home-left .sc_btn img'));
     });
     $(document).on("scroll click",'.sOn .popcon_wrap',function(){
-        console.log('f');
+//         console.log('f');
         var scTop = $('.sOn .popcon_wrap').scrollTop();
-        console.log(scTop);
+//         console.log(scTop);
         scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),$('.sOn .popcon_wrap').scrollTop(),$('.pop_sc img'));
     });
 });
