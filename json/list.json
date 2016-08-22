@@ -3,10 +3,10 @@
     {
     "name":"CocaCola",
     "bgname":"cocacola.jpg",
-    "about":"웹퍼블리싱, 공동작업(WBS/IA작성)<br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
-    "period":"2016.07(10일간)",
-    "skill":"HTML/CSS, Javascript, JQuery, SVN, Redmine",
-    "link":"http://pf.i-make.kr:8080/CocaCola/html/main/main.jsp",
+    "about":"웹퍼블리싱, 공동작업(WBS/<a href='images/cocacola_IA.pdf' target='_blank'>IA</a>작성)<br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+    "period":"2016.07(15일간)",
+    "skill":"HTML/CSS, Javascript, JQuery, SVN, <a href='images/easy_gantt_cocacola.pdf' target='_blank'>Redmine</a>",
+    "link":"<a target='_blank' href='http://pf.i-make.kr:8080/CocaCola/index.html'>http://pf.i-make.kr:8080/CocaCola/index.html</a>",
     "repository":"https://github.com/logaegae/project_team_cocacola.git"
     },
     {
@@ -15,8 +15,8 @@
       "about":"홈쇼핑 퍼스트몰 메인페이지 웹퍼블리싱",
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery",
-      "link":"http://nillavanilla.firstmall.kr",
-      "repository":"none"
+      "link":"<a target='_blank' href='http://nillavanilla.firstmall.kr'>http://nillavanilla.firstmall.kr</a>",
+      "repository":""
     },
     {
       "name":"JYP Twice",
@@ -24,8 +24,8 @@
       "about":"웹퍼블리싱, 반응형/CSS3<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery, LESS",
-      "link":"http://",
-      "repository":"https://github.com/logaegae/xx.git"
+      "link":"",
+      "repository":""
     },
     {
       "name":"Naver News",
@@ -33,8 +33,8 @@
       "about":"웹퍼블리싱 트레이싱, HTML/CSS/레이아웃<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "period":"2016.05(3일간)",
       "skill":"HTML/CSS",
-      "link":"http://",
-      "repository":"https://github.com/logaegae/xx.git"
+      "link":"",
+      "repository":""
     },
     {
       "name":"경희의료원",
@@ -42,7 +42,7 @@
       "about":"웹리뉴얼 기획<br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "skill":"Axure, Photoshop, Illustrator",
       "period":"2016.04(5일간)",
-      "link":"http://nillavanilla.firstmall.kr",
-      "repository":"none"
+      "link":"<a href='images/khuh_renewal_proposal.pdf' target='_blank'> 기획서, </a><a href='images/p_main.jpg' target='_blank'> Main 1안, </a><a href='images/p_no_2_main.jpg' target='_blank'> Main 2안, </a><a href='images/p_sub.jpg' target='_blank'> Subpage, </a><a href='images/p_mobile.jpg' target='_blank'> Mobile, </a>",
+      "repository":""
     }]
 }
