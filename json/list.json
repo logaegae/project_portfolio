@@ -7,7 +7,7 @@
     "period":"2016.07(10일간)",
     "skill":"HTML/CSS, Javascript, JQuery, SVN, Redmine",
     "link":"http://pf.i-make.kr:8080/CocaCola/html/main/main.jsp",
-    "repository":"http://svn.freeive.com/freeive/sc"
+    "repository":"https://github.com/logaegae/project_team_cocacola.git"
     },
     {
       "name":"Nilla Nilla Vanilla",
@@ -16,7 +16,7 @@
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery",
       "link":"http://nillavanilla.firstmall.kr",
-      "repository":"https://github.com/logaegae/xx.git"
+      "repository":"none"
     },
     {
       "name":"JYP Twice",
@@ -33,7 +33,7 @@
       "about":"웹퍼블리싱 트레이싱, HTML/CSS/레이아웃<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "period":"2016.05(3일간)",
       "skill":"HTML/CSS",
-      "link":"http://nillavanilla.firstmall.kr",
+      "link":"http://",
       "repository":"https://github.com/logaegae/xx.git"
     },
     {
@@ -43,6 +43,6 @@
       "skill":"Axure, Photoshop, Illustrator",
       "period":"2016.04(5일간)",
       "link":"http://nillavanilla.firstmall.kr",
-      "repository":""
+      "repository":"none"
     }]
 }
