@@ -1274,11 +1274,11 @@ footer {
     height: 20px;
 }
 
-[data-tooltip-text]:hover {
+[data-tooltip-text-l]:hover,[data-tooltip-text-r]:hover {
     position: relative;
 }
 
-[data-tooltip-text]:after {
+[data-tooltip-text-l]:after,[data-tooltip-text-r]:after {
     padding: 5px;
     border-radius: 5px;
     width: auto;
@@ -1299,13 +1299,18 @@ footer {
     line-height: 24px;
 }
 
-[data-tooltip-text]:hover:after {
-    content: attr(data-tooltip-text);
+[data-tooltip-text-l]:hover:after {
+    content: attr(data-tooltip-text-l);
     top: 110%;
     left: 0;
     opacity: 1
 }
-
+[data-tooltip-text-r]:hover:after {
+    content: attr(data-tooltip-text-r);
+    top: 110%;
+    right: 0%;
+    opacity: 1
+}
 .social-icon ul {
     display: inline-block;
 }
