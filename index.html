@@ -91,8 +91,8 @@
     								<div class="card__front black-bg">
     									<div class="social-icon">
     										<ul>
-    											<li class="facebook"><a ><i class="fa fa-facebook"></i></a></li>
-    											<li class="twitter"><a ><i class="fa fa-twitter"></i></a></li>
+    											<li class="facebook"><a ><i class="fa fa-facebook"><span>페이스북</span></i></a></li>
+    											<li class="twitter"><a ><i class="fa fa-twitter"><span>트위터</span></i></a></li>
     										</ul>
                                             <span id="sns_mes">준비중입니다</span>
     									</div>
@@ -116,7 +116,7 @@
     								<div class="card__back">
     									<div class="about-body">
 
-    										<div class="close-about-btn">
+    										<div class="close-about-btn" onclick="closeP();">
     											<i class="fa fa-close"></i>
     										</div>
 
@@ -243,7 +243,7 @@
 
     								<div class="card__back">
     									<div class="aboutMe-body">
-    										<div class="close-aboutMe-btn">
+    										<div class="close-aboutMe-btn" onclick="closeA();">
     											<i class="fa fa-close"></i>
     										</div>
 
@@ -378,7 +378,7 @@
 
     				<div id="animatedModal" class="animated animatedModal-off" style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; overflow-y: auto; z-index: -9999; opacity: 0; animation-duration: 0.6s; background-color: rgb(57, 190, 185);">
     					<div class="modal-content">
-    						<div class="col-lg-6 no-padding">
+    						<div class="col-lg-6 col-md-6  col-sm-6 col-xs-12 no-padding">
                                 <div id="map"></div>
                                 <script>
                                   function initMap() {
@@ -402,7 +402,7 @@
                                     async defer></script>
     						</div>
 
-    						<div class="col-lg-6 no-padding">
+    						<div class="col-lg-6 col-md-6  col-sm-6 col-xs-12 no-padding">
     							<div class="contact black-bg">
     								<div id="btn-close-modal" class="close-animatedModal">
     									<i class="fa fa-close"></i>
@@ -418,25 +418,27 @@
         									<span class="colored-text icon_error-circle_alt"></span> 이메일이 유효하지 않거나 메세지 내용이 없습니다. </h5>
 
                           <label for="cf-name">
-        									<div class="field-wrapper col-md-12">
-        										<input class="form-control input-box" id="cf-name" type="text" name="cf-name" placeholder="이름">
-        									</div></label>
-
-                          <label for="cf-email">
-        									<div class="field-wrapper col-md-12">
-        										<input class="form-control input-box" id="cf-email" type="email" name="cf-email" placeholder="이메일">
-        									</div></label>
-                          
-                          <label for="cf-subject">
-        									<div class="field-wrapper col-md-12">
-        										<input class="form-control input-box" id="cf-subject" type="text" name="cf-subject" placeholder="제목">
-        									</div></label>
-
-        									<div class="field-wrapper text-area col-md-12">
-        										<textarea class="form-control textarea-box" id="cf-message" rows="3" name="cf-message" placeholder="메세지를 입력하세요"></textarea>
-        										<button class="btn standard-button" type="submit" id="cf-submit" name="submit" data-style="expand-left">보내기</button>
-        									</div>
-
+                          					 <fieldset>
+						  					 	<legend>메세지 보내기</legend>
+		        									<div class="field-wrapper col-md-12">
+		        										<input class="form-control input-box" id="cf-name" type="text" name="cf-name" placeholder="이름">
+		        									</div></label>
+		
+		                          <label for="cf-email">
+		        									<div class="field-wrapper col-md-12">
+		        										<input class="form-control input-box" id="cf-email" type="email" name="cf-email" placeholder="이메일">
+		        									</div></label>
+		                          
+		                          <label for="cf-subject">
+		        									<div class="field-wrapper col-md-12">
+		        										<input class="form-control input-box" id="cf-subject" type="text" name="cf-subject" placeholder="제목">
+		        									</div></label>
+		
+		        									<div class="field-wrapper text-area col-md-12">
+		        										<textarea class="form-control textarea-box" id="cf-message" rows="3" name="cf-message" placeholder="메세지를 입력하세요"></textarea>
+		        										<button class="btn standard-button" type="submit" id="cf-submit" name="submit" data-style="expand-left">보내기</button>
+		        									</div>
+												</fieldset>
     							        </form>
     								</div>
     							</div>
