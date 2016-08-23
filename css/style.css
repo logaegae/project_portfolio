@@ -361,7 +361,7 @@ span.line {
 .right-contact{
 
     position:absolute;
-    top:15%;
+    top:23%;
     text-align: center;
     padding: 0 15px;
     left:0;
@@ -614,7 +614,7 @@ span.line {
     height: 100vh;
     position: relative;
     width: 100%;
-    min-height:625px;
+    min-height:633px;
 }
 
 .contact h3 {
@@ -627,7 +627,7 @@ span.line {
 }
 
 .contact-form {
-    margin-top: 40px;
+
     padding: 30px
 }
 
