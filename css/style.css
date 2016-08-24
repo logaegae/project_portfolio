@@ -697,7 +697,7 @@ video {
 
 @media screen and (max-device-width:480px) {
     body {
-        background: url(../images/back.png) center center no-repeat fixed #000
+        background-image: center center no-repeat fixed #FFF;
     }
 
     #bgvid {
