@@ -7,7 +7,7 @@
     "period":"2016.07(15일간)",
     "skill":"HTML/CSS, Javascript, JQuery, SVN, <a href='images/easy_gantt_cocacola.pdf' target='_blank'>Redmine</a>",
     "link":"<a target='_blank' href='http://pf.i-make.kr:8080/CocaCola/index.html'>http://pf.i-make.kr:8080/CocaCola/index.html</a>",
-    "repository":"https://github.com/logaegae/project_team_cocacola.git"
+    "repository":"<a target='_blank' href='http://pf.i-make.kr:8080/CocaCola/index.html'>https://github.com/logaegae/project_team_cocacola.git</a>"
     },
     {
       "name":"Nilla Nilla Vanilla",
@@ -25,7 +25,7 @@
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery, LESS",
       "link":"",
-      "repository":""
+      "repository":"<a target='_blank' href='http://pf.i-make.kr:8080/CocaCola/index.html'>https://github.com/logaegae/project_twice.git</a>"
     },
     {
       "name":"Naver News",
