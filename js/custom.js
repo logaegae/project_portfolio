@@ -310,6 +310,7 @@ $('.social-icon li a').click(function(){
               'height':'50%',
               'width':'80%',
               'minWidth':'320px',
+              'maxWidth': '900px',
               'minHeight':'480px',
               'top':'50%',
               'left':'50%'
@@ -364,8 +365,9 @@ function slideMove(target,amount){
 }
  /*===           팝업 정렬 함수            ====*/
  function popcenter(){
-    if($(window).width()  > 400) $('.shadow').css({'marginLeft':-$(window).width() * 0.4});
-    else $('.shadow').css({'marginLeft':-256+'px'});
+    if($(window).width() * 0.8  < 900){ $('.shadow').css({'marginLeft':-$(window).width() * 0.4}); }
+    else if($(window).width() * 0.8  >= 900){ $('.shadow').css({'marginLeft': -450+'px'}); }
+   
     if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
     else $('.shadow').css({'marginTop':-240+'px'});
  }
