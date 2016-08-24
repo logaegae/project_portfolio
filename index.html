@@ -395,6 +395,11 @@
                                       position: myposition,
                                       title: 'Hello!'
                                     });
+                                    //Mobile
+                                    var isDraggable = !('ontouchstart' in document.documentElement);
+                                    var mapOptions = {
+                                      draggable: isDraggable
+                                    };
                                   }
 
                                 </script>
