@@ -383,10 +383,13 @@
                                 <script>
                                   function initMap() {
                                     var myposition = {lat: 37.575811, lng: 127.020857};
+                                    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+                                    var isDraggable = w > 767 ? true : false;
                                     // Create a map object and specify the DOM element for display.
                                     var map = new google.maps.Map(document.getElementById('map'), {
                                       center: myposition,
                                       scrollwheel: false,
+                                      draggable: isDraggable,
                                       zoom: 14
                                     });
                                     // Create a marker and set its position.
@@ -395,12 +398,6 @@
                                       position: myposition,
                                       title: 'Hello!'
                                     });
-                                    //Mobile
-                                    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-                                    var isDraggable = w > 767 ? true : false;
-                                    var mapOptions = {
-                                      draggable: isDraggable
-                                    };
                                   }
 
                                 </script>
