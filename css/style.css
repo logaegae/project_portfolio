@@ -554,10 +554,12 @@ span.line {
     color: #fff;
     height: 100%;
     width: 100%;
+    display:none;
 }
 
 .aboutMe-section {
     padding: 5%;
+
 }
 
 .aboutMe-content {
@@ -697,11 +699,11 @@ video {
 
 @media screen and (max-device-width:480px) {
     body {
-        background-image: center center no-repeat fixed #FFF;
+        background:#FFF;
     }
 
     #bgvid {
-        display: none
+        display: none;
     }
 }
 
@@ -1427,6 +1429,7 @@ footer {
 
 .card__front {
     min-height: 720px;
+    display:block;
 }
 .social-icon i span{
 	display:block;

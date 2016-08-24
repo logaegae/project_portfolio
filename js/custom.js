@@ -12,12 +12,14 @@ function closeP(){
         $('.about-body').fadeOut(500);
         $('.home').removeClass('flipped');
         $('.about-body .line').fadeOut('slow/400/fast').css({'marginLeft':'2000px','width':'1000px'});
-    
+
 };
 function closeA(){
           $('.home-right .card__front>div').fadeIn(500);
           $('.aboutMe-section').fadeOut(500);
           $('.close-aboutMe-btn').fadeOut(200);
+          $('.aboutMe-body').fadeOut(500);
+          $('.home-right .card__front').fadeIn(500);
 
            $(".tit_wrap").fadeOut();
            $("#tit1,#tit3,#tit5").css({
@@ -65,6 +67,9 @@ $('.social-icon li a').click(function(){
     $(".open-aboutMe-btn").click(function(){
         $('.home-right .card__front>div').fadeOut(500);
         $('.aboutMe-section').fadeIn(2000);
+        $('.aboutMe-body').fadeIn(500);
+        $('.home-right .card__front').fadeOut(500);
+
         setTimeout(function(){$('.close-aboutMe-btn').fadeIn(500);},500)
 
         $(".count-clock").addClass('flipped');
@@ -238,7 +243,7 @@ $('.social-icon li a').click(function(){
             }
         }
     })
-    
+
 /*===           포폴 이미지 클릭            ====*/
     $('.img_wrap').click(function(){
         var idx = $(this).parent('.content_box').index();
@@ -249,7 +254,7 @@ $('.social-icon li a').click(function(){
         insert += '<div class="popUP_box">';
         insert += '<div class="pop_contents">';
         insert += '<ul>';
-        
+
         insert += '</ul></div></div></div></div></div>';
         $('section').append(insert);
         var insert = '';
@@ -281,8 +286,8 @@ $('.social-icon li a').click(function(){
                     $('.pop_contents ul li').eq(i).find('#about').html('<strong>작업내용</strong>: '+data.list[data.list.length - 1].about);
                     $('.pop_contents ul li').eq(i).find('#period').html('<strong>기간</strong>: '+data.list[data.list.length - 1].period);
                     $('.pop_contents ul li').eq(i).find('#skill').html('<strong>활용기술</strong>: '+data.list[data.list.length - 1].skill);
-                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+'<a target="_blank" href="'+data.list[data.list.length - 1].link+'">'+data.list[data.list.length - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: <a target="_blank" href="'+data.list[data.list.length - 1].repository+'">'+data.list[data.list.length - 1].repository+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+data.list[data.list.length - 1].link);
+                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: '+data.list[data.list.length - 1].repository);
                 }
                 else{
                     bgurl = data.list[i - 1].bgname;
@@ -291,12 +296,12 @@ $('.social-icon li a').click(function(){
                     $('.pop_contents ul li').eq(i).find('#about').html('<strong>작업내용</strong>: '+data.list[i - 1].about);
                     $('.pop_contents ul li').eq(i).find('#period').html('<strong>기간</strong>: '+data.list[i - 1].period);
                     $('.pop_contents ul li').eq(i).find('#skill').html('<strong>활용기술</strong>: '+data.list[i - 1].skill);
-                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+'<a target="_blank" href="'+data.list[i - 1].link+'">'+data.list[i - 1].link+'</a>');
-                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: <a target="_blank" href="'+data.list[i - 1].repository+'">'+data.list[i - 1].repository+'</a>');
+                    $('.pop_contents ul li').eq(i).find('#link').html('<strong>보러가기</strong>: '+data.list[i - 1].link);
+                    $('.pop_contents ul li').eq(i).find('#Github').html('<strong>Repository</strong>: '+data.list[i - 1].repository);
                 }
             }
         });
-    
+
         /*===           팝업 에니메이션 / 정렬            ====*/
         $('section').find('.pop_blind').fadeIn(400,function(){
             $('.shadow').css({
@@ -314,7 +319,7 @@ $('.social-icon li a').click(function(){
             ulWidth();
             /*===           화면 맞추기            ====*/
             ulLeft(idx + 1);
-            
+
             $('.pop_contents ul li').eq(idx + 1).addClass('sOn').siblings().removeClass('sOn');
             scBtn();
             $('.popUP').show();
@@ -370,7 +375,7 @@ function scBtn(){
             $('.home-right .sc_btn img').stop().fadeIn(1000);
         }else $('.home-right .sc_btn img').stop().fadeOut(2000);
     };
-    
+
     if( $('.home-left .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
         if( $('.about-wrap').height() < $('.about-content').outerHeight(true) ){
             $('.home-left .sc_btn img').stop().fadeIn(1000);
@@ -401,7 +406,7 @@ function moveIcon(){
 moveIcon();
 /*===           스크롤 버튼 에니메이션 함수            ====*/
 function scFn(mother,son,scroll,target){
-    
+
     var sc_target = mother.outerHeight(true) + scroll;
     var sc_sum = son.outerHeight(true);
     // console.log(sc_target,sc_sum);
@@ -416,7 +421,7 @@ function scFn(mother,son,scroll,target){
 /*===           팝업 NEXT BACK 버튼 클릭            ====*/
 $(document).on('click','.flaticon-next',function(){
     var idx = $('.sOn').index();
-    
+
     if(idx != $('.content_box').length){
         $('.pop_contents ul li').eq(idx+1).addClass('sOn').siblings().removeClass('sOn')
         slideMove('.pop_contents ul',1);
@@ -429,12 +434,12 @@ $(document).on('click','.flaticon-next',function(){
         },function(){
              $('.pop_contents ul').css({'left': -unit});
         });
-        
+
     }
 });
 $(document).on('click','.flaticon-back',function(){
     var idx = $('.sOn').index();
-    
+
     if(idx != 1){
         $('.pop_contents ul li').eq(idx - 1).addClass('sOn').siblings().removeClass('sOn')
         slideMove('.pop_contents ul',-1);
