@@ -6,6 +6,7 @@ body {
     line-height: 30px;
     font-weight: 400;
     color: #666;
+    overflow:hidden;
     -webkit-text-size-adjust: 100%;
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased !important
@@ -133,8 +134,17 @@ ul {
     background: rgba(0, 0, 0, 0.9);
 }
 
-.close-about-btn, .close-btn, .close-model-btn, .close-aboutMe-btn {
+.close-about-btn, .close-btn, .close-aboutMe-btn {
     border: 1px solid;
+    display: inline-block;
+    padding: 0 10px;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    cursor: pointer
+}
+.close-model-btn{
+	border: 1px solid;
     display: inline-block;
     padding: 0 10px;
     position: fixed;
@@ -142,7 +152,6 @@ ul {
     top: 15px;
     cursor: pointer
 }
-
 .open-about-btn, .open-contact-btn, .open-aboutMe-btn {
     width: 200px;
     padding: 15px 20px;

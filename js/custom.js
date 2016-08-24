@@ -108,6 +108,8 @@ $('.social-icon li a').click(function(){
         animatedIn:'fadeInDown',
         animatedOut:'bounceOutUp'
     });
+    
+    
 
 /*=== 음소거 버튼  ===*/
     $(document).on('click','#megaIcon',function(){
@@ -306,7 +308,7 @@ $('.social-icon li a').click(function(){
         $('section').find('.pop_blind').fadeIn(400,function(){
             $('.shadow').css({
               'height':'50%',
-              'width':'50%',
+              'width':'80%',
               'minWidth':'320px',
               'minHeight':'480px',
               'top':'50%',
@@ -362,8 +364,8 @@ function slideMove(target,amount){
 }
  /*===           팝업 정렬 함수            ====*/
  function popcenter(){
-    if($(window).width() / 2 > 320) $('.shadow').css({'marginLeft':-$(window).width() / 4});
-    else $('.shadow').css({'marginLeft':-160+'px'});
+    if($(window).width()  > 400) $('.shadow').css({'marginLeft':-$(window).width() * 0.4});
+    else $('.shadow').css({'marginLeft':-256+'px'});
     if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
     else $('.shadow').css({'marginTop':-240+'px'});
  }
