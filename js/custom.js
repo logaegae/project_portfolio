@@ -211,7 +211,7 @@ $('.social-icon li a').click(function(){
         });
     }).mouseleave(function() {
         $(this).find('.blind').animate({
-            'marginTop':'230px'
+            'marginTop':'230px'			
         });
     });
 
@@ -317,7 +317,7 @@ $('.social-icon li a').click(function(){
             });
             popcenter();
             /*===           스크롤 숨기기            ====*/
-            $('.rightB .popcon_wrap').css({'width':$(window).width() / 2 - 66+'px','height':$(window).height() * 0.2});
+            $('.rightB .popcon_wrap').css({'width':$(window).width() * 0.8 - 66+'px','height':$(window).height() * 0.2});
             /*===           사이즈 보정            ====*/
             ulWidth();
             /*===           화면 맞추기            ====*/
@@ -336,23 +336,28 @@ $('.social-icon li a').click(function(){
 $(document).on('click','.cross-btn',function(){
   $('.pop_blind').fadeOut(500,function(){
     $('.pop_blind').remove();
-  })
+  });
 })
  /*===           슬라이드 li width 계산 함수            ====*/
 function liWidth(){
     var wid = null;
-    if($(window).width() / 2 - 36 > 285) wid = $(window).width() / 2 - 36;
-    else wid = 285;
+    if($(window).width() * 0.8 - 68 > 282) {
+	    if($(window).width() * 0.8 - 68 > 900 -68){ wid = 900 -68;}
+	    else wid = $(window).width() * 0.8 - 68;
+	}else wid = 282;
+	console.log(wid)
     return wid;
 }
  /*===           슬라이드 ul 계산 함수            ====*/
 function ulWidth(){
     var wid = liWidth();
-    $('.pop_contents ul').css('width',wid * ($('.pop_contents ul li').length + 1))
+    $('.pop_contents ul li').css('width',wid);
+    $('.pop_contents ul').css('width',wid * ($('.pop_contents ul li').length));
+    
  }
 /*===           슬라이드 ul left 계산 함수            ====*/
 function ulLeft(index){
-    var leftW = liWidth();
+    var leftW = liWidth();	
     $('.pop_contents ul').css('left',index * -leftW)
 }
 /*===           슬라이드 버튼 클릭시 이동 함수            ====*/
@@ -470,7 +475,7 @@ $(document).on('click','.flaticon-back',function(){
         ulWidth();
         /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
-        $('.rightB .popcon_wrap').css({'width':$(window).width() / 2 - 66+'px','height':$(window).height() * 0.2});
+        $('.rightB .popcon_wrap').css({'width':$(window).width() * 0.8 - 68+'px','height':$(window).height() * 0.2});
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
         /*===           팝업창 이동            ====*/
@@ -494,6 +499,5 @@ $(document).on('click','.flaticon-back',function(){
 //         console.log(scTop);
         scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),$('.sOn .popcon_wrap').scrollTop(),$('.pop_sc img'));
     });
-/*===           Contact 닫기 버튼 반응형           ====*/
 
 });
