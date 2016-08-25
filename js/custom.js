@@ -77,7 +77,9 @@ $('.social-icon li a').click(function(){
                 'marginLeft':'0',
                 'width':'50px'
             },2000);
-
+            
+		$('.aboutMe-content').css('width',$('.aboutMe-wrap').width() + 17 +'px');
+		
         // === 자기소개 에니메이션 === //
 
             /*===           이미지 이동             ====*/
@@ -95,11 +97,7 @@ $('.social-icon li a').click(function(){
             },1000)
             setTimeout(function(){
                 $('.con_wrap').fadeIn(2000);
-            },2000)
-
-        /*===           높이 보정             ====*/
-        if($(window).width() > 767)$('.pri_sum').css('height',$('.sum_left').height());
-        else $('.pri_sum').css('height',$('.sum_left').height() + $('.sum_right').height());
+            },2000);
     });
 
 /*===  모달 에니메이션  ===*/
@@ -268,7 +266,7 @@ $('.social-icon li a').click(function(){
         for(i=0; i<$('.content_box').length + 2; i++){
             $('.pop_contents ul').append(insert);
         }
-        /*===           JSON 다 불러오기 , 나중에 앙귤라로 바꿀 부분        ====*/
+        /*===           JSON 다 불러오기 , 나중에 앙귤라로        ====*/
         $.getJSON("json/list.json",function(data){
             var bgurl = '';
             for(i=0;i<data.list.length + 2;i++){
@@ -345,7 +343,6 @@ function liWidth(){
 	    if($(window).width() * 0.8 - 68 > 900 -68){ wid = 900 -68;}
 	    else wid = $(window).width() * 0.8 - 68;
 	}else wid = 282;
-	console.log(wid)
     return wid;
 }
  /*===           슬라이드 ul 계산 함수            ====*/
@@ -358,7 +355,7 @@ function ulWidth(){
 /*===           슬라이드 ul left 계산 함수            ====*/
 function ulLeft(index){
     var leftW = liWidth();	
-    $('.pop_contents ul').css('left',index * -leftW)
+    $('.pop_contents ul').css('left',index * -leftW);
 }
 /*===           슬라이드 버튼 클릭시 이동 함수            ====*/
 function slideMove(target,amount){
@@ -371,7 +368,7 @@ function slideMove(target,amount){
  /*===           팝업 정렬 함수            ====*/
  function popcenter(){
     if($(window).width() * 0.8  < 900){ $('.shadow').css({'marginLeft':-$(window).width() * 0.4}); }
-    else if($(window).width() * 0.8  >= 900){ $('.shadow').css({'marginLeft': -450+'px'}); }
+    else if($(window).width() * 0.8  >= 900){ $('.shadow').css({'marginLeft': -450+'px'}); };
    
     if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
     else $('.shadow').css({'marginTop':-240+'px'});
@@ -475,7 +472,7 @@ $(document).on('click','.flaticon-back',function(){
         ulWidth();
         /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
-        $('.rightB .popcon_wrap').css({'width':$(window).width() * 0.8 - 68+'px','height':$(window).height() * 0.2});
+        $('.aboutMe-wrap').css('width',$('.aboutMe-content').width() - 17 +'px');
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
         /*===           팝업창 이동            ====*/

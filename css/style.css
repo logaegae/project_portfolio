@@ -6,7 +6,6 @@ body {
     line-height: 30px;
     font-weight: 400;
     color: #666;
-    overflow:hidden;
     -webkit-text-size-adjust: 100%;
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased !important
@@ -127,7 +126,8 @@ ul {
 }
 
 .no-padding {
-    padding: 0
+    padding: 0;
+    overflow:hidden;
 }
 
 .black-bg {
@@ -564,17 +564,24 @@ span.line {
     height: 100%;
     width: 100%;
     display:none;
+    overflow:hidden;
 }
 
 .aboutMe-section {
     padding: 5%;
 
 }
-
+.aboutMe-wrap{
+	overflow:hidden;
+	width:100%;
+}
 .aboutMe-content {
     font-weight: 300;
     font-style: italic;
     font-size: 16px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:85vh;
 }
 
 .subscription-form .input-box {
@@ -1233,7 +1240,7 @@ video {
 
 .pri_sum {
     height: 320px;
-    margin-top: 40px;
+    margin-top:30px;
 }
 
 .pri_sum dt {
