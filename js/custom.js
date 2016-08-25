@@ -472,7 +472,7 @@ $(document).on('click','.flaticon-back',function(){
         ulWidth();
         /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
-        $('.aboutMe-wrap').css('width',$('.aboutMe-content').width() - 17 +'px');
+        $('.aboutMe-content').css('width',$('.aboutMe-wrap').width() + 17 +'px');
         /*===           아이콘 이동 함수 실행            ====*/
         moveIcon();
         /*===           팝업창 이동            ====*/
