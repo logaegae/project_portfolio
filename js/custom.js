@@ -415,7 +415,7 @@ function scFn(mother,son,scroll,target){
 
     var sc_target = mother.outerHeight(true) + scroll;
     var sc_sum = son.outerHeight(true);
-    // console.log(sc_target,sc_sum);
+    console.log(scroll, sc_target,sc_sum);
     if( scroll == 0){ target.stop().fadeOut(400,function(){
        target.css({'transform':'rotateX(0)','-webkit-transform':'rotateX(0)','-o-transform':'rotateX(0)','-moz-transform':'rotateX(0)','-ms-transform':'rotateX(0)'}).fadeIn(400);
     });
@@ -467,8 +467,6 @@ $(document).on('click','.flaticon-back',function(){
         /*===           스크롤 함수 실행             ====*/
         scBtn();
         /*===           사이즈 보정             ====*/
-        if($(window).width() > 767)$('.pri_sum').css('height',$('.sum_left').height());
-        else $('.pri_sum').css('height',$('.sum_left').height() + $('.sum_right').height());
         ulWidth();
         /*===           스크롤 숨기기            ====*/
         $('.about-wrap').css('width',$('.about-wrap-wrap').width() + 17 +'px');
@@ -482,9 +480,10 @@ $(document).on('click','.flaticon-back',function(){
     });
 
 /*===           스크롤 이벤트            ====*/
-    $('.aboutMe-body').scroll(function(){
+    $('.aboutMe-content').scroll(function(){
+	   
         var scTop = $(this).scrollTop();
-        scFn($('.aboutMe-body'),$('.aboutMe-section'),scTop,$('.home-right .sc_btn img'));
+        scFn($('.aboutMe-content'),$('.aboutMe-con-box'),scTop,$('.home-right .sc_btn img'));
     });
     $('.about-wrap').scroll(function(){
         var scTop = $(this).scrollTop();

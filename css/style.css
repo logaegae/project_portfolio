@@ -1252,7 +1252,9 @@ video {
     font-size: 18px;
     word-break: break-all;
 }
-
+.aboutMe-con-box{
+	height:100%;
+}
 .aboutMe-section .line {
     background-color: #FFF;
     margin-top: 30px;
