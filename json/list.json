@@ -24,7 +24,11 @@
       "about":"웹퍼블리싱, 반응형/CSS3<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "period":"2016.06(5일간)",
       "skill":"HTML/CSS, Javascript, JQuery, LESS",
+<<<<<<< HEAD
       "link":"<a target='_blank' href='http:/logaegae.cafe24.com/twice/index.php'>http:/logaegae.cafe24.com/twice/index.php</a>",
+=======
+      "link":"<a target='_blank' href='//logaegae.cafe24.com/twice/index/php'>http://logaegae.cafe24.com/twice/index/php</a>",
+>>>>>>> origin/master
       "repository":"<a target='_blank' href='https://github.com/logaegae/project_twice.git'>https://github.com/logaegae/project_twice.git</a>"
     },
     {
