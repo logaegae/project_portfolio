@@ -77,9 +77,9 @@ $('.social-icon li a').click(function(){
                 'marginLeft':'0',
                 'width':'50px'
             },2000);
-            
+
 		$('.aboutMe-content').css('width',$('.aboutMe-wrap').width() + 17 +'px');
-		
+
         // === 자기소개 에니메이션 === //
 
             /*===           이미지 이동             ====*/
@@ -106,8 +106,8 @@ $('.social-icon li a').click(function(){
         animatedIn:'fadeInDown',
         animatedOut:'bounceOutUp'
     });
-    
-    
+
+
 
 /*=== 음소거 버튼  ===*/
     $(document).on('click','#megaIcon',function(){
@@ -209,7 +209,7 @@ $('.social-icon li a').click(function(){
         });
     }).mouseleave(function() {
         $(this).find('.blind').animate({
-            'marginTop':'230px'			
+            'marginTop':'230px'
         });
     });
 
@@ -336,6 +336,11 @@ $(document).on('click','.cross-btn',function(){
     $('.pop_blind').remove();
   });
 })
+$(document).on('click','.pop_blind',function(){
+  $('.pop_blind').fadeOut(500,function(){
+    $('.pop_blind').remove();
+  });
+})
  /*===           슬라이드 li width 계산 함수            ====*/
 function liWidth(){
     var wid = null;
@@ -350,11 +355,11 @@ function ulWidth(){
     var wid = liWidth();
     $('.pop_contents ul li').css('width',wid);
     $('.pop_contents ul').css('width',wid * ($('.pop_contents ul li').length));
-    
+
  }
 /*===           슬라이드 ul left 계산 함수            ====*/
 function ulLeft(index){
-    var leftW = liWidth();	
+    var leftW = liWidth();
     $('.pop_contents ul').css('left',index * -leftW);
 }
 /*===           슬라이드 버튼 클릭시 이동 함수            ====*/
@@ -369,7 +374,7 @@ function slideMove(target,amount){
  function popcenter(){
     if($(window).width() * 0.8  < 900){ $('.shadow').css({'marginLeft':-$(window).width() * 0.4}); }
     else if($(window).width() * 0.8  >= 900){ $('.shadow').css({'marginLeft': -450+'px'}); };
-   
+
     if($(window).height() / 2 > 480) $('.shadow').css({'marginTop':-$(window).height() / 4});
     else $('.shadow').css({'marginTop':-240+'px'});
  }
@@ -481,7 +486,7 @@ $(document).on('click','.flaticon-back',function(){
 
 /*===           스크롤 이벤트            ====*/
     $('.aboutMe-content').scroll(function(){
-	   
+
         var scTop = $(this).scrollTop();
         scFn($('.aboutMe-content'),$('.aboutMe-con-box'),scTop,$('.home-right .sc_btn img'));
     });
