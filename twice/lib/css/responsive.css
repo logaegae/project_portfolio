@@ -21,6 +21,24 @@
     .full_box{max-width: 1000px; width: 85%; margin: 0 auto;}
     .photos{max-width: 769px;}
     .photos li{ width: 20%;}
+    .yearMonth h3{
+        padding: 12px 0 10px 0;
+        margin: 0;
+        font-size: 13px;
+    }
+    .sche-text{
+        padding: 0;
+        font-size: 12px;
+        line-height: 17px;
+    }
+    .cal{
+        float: left;
+        width: 40%;
+    }
+    #sche-list{
+        float: right;
+        width: 55%;
+    }
 }
 @media screen and (max-width:777px) and (min-width:480px){
     header { padding:0px; background-color:#fff; height:55px; }
@@ -36,8 +54,16 @@
     .sect-title { margin:0 auto; width:500px; height:50px; padding-bottom:20px; background-repeat:no-repeat; background-position:top center; background-size:50%; text-indent:-9999px;}
     .video_wrapper .movie{height: 303px;}
     #video-list img{width:138px;}
-    
-    
+    .yearMonth h3{
+        padding: 12px 0 10px 0;
+        margin: 0;
+        font-size: 13px;
+    }
+    .sche-text{
+        padding: 0;
+        font-size: 12px;
+        line-height: 17px;
+    }
 }
 @media screen and (max-width:480px){
     header { padding:0px; background-color:#fff; height:40px; }
@@ -54,6 +80,7 @@
     .sect-title { margin:0 auto; width:100%; height:30px; padding-bottom:20px; background-repeat:no-repeat; background-position:top center; background-size:40%; text-indent:-9999px;}
     .video_wrapper .movie{height: 240px;}
     #video-list img{width:90px;}
+    .yearMonth h3{ line-height: 40px; font-size: 17px;}
 }
 @media screen and (max-width:777px){
     .disco_wrapper section{margin-bottom:57px;}
@@ -66,4 +93,12 @@
     .full_box{width: 85%; margin: 0 auto;}
     .photos{max-width: 480px;}
     .photos li{width: 32%;}
+    .cal{
+        float: none;
+        width: 100%;
+    }
+    #sche-list{
+        float: none;
+        width: 100%;
+    }
 }

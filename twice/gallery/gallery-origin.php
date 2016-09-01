@@ -56,6 +56,7 @@
         
 // 가운데 정렬 함수
 function popRe(W,H,target,callback) {
+    
     var ratio = H / W;
     target.css({"height": imsiH});
     target.css({"width": imsiW});
@@ -71,8 +72,8 @@ function popRe(W,H,target,callback) {
         'marginLeft': -target.width() / 2,
         'marginTop': -target.height() / 2
     },1,function(){
-        callback();    
-        console.log('before');
+        callback();   
+       
     });
     
     

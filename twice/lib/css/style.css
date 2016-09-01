@@ -521,3 +521,110 @@ text-indent:-9999px;
     left: 10px;
     background-position: 0 -36px;
 }
+.sche_wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.yearMonth{
+    position: relative;
+    height: 40px;
+    background-color: #f8f5f2;
+}
+.yearMonth h3{
+    text-align: center;
+    font-family: 'Maven Pro', sans-serif;
+    letter-spacing: 1px;
+    color: #4a4a49;
+}
+.yearMonth .pm {
+    top: 13px;
+    left: 20px;
+}
+.yearMonth .nm {
+    top: 13px;
+    right: 20px;
+}
+.yearMonth .btn {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 15px;
+}
+.yearMonth a{
+    cursor:pointer;
+}
+
+.cal th{
+    height: 42px;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: 'Maven Pro', sans-serif;
+    color: #5e5e5d;
+    border-bottom: 1px solid #d3d3d3;
+}
+.cal th.sun{
+    color: #e71a5f;
+}
+.cal td{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    border-right: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    vertical-align: top;
+    color: #858480;
+    font-size: 10px;
+    padding:3px 0 0 3px;
+}
+.cal td.sun{
+    border-left: 1px solid #d3d3d3;
+}
+.cal td div{padding: 3px 0 0 3px;}
+.cal td a{    
+    display: block;
+    height: 40px;
+    color: #e71a5f;
+    padding: 0;
+    margin: 0;
+}
+.cal td.sch_on{
+    padding: 3px 0 0 3px;
+    color: #e71a5f;
+    background: #ededed;
+}
+#sche-list{
+    
+    padding-top: 20px;
+}
+#sche-list li{
+    margin: 20px;
+    display: block;
+    border-top: solid 1px #ccc;
+    font-size:12px;
+}
+.sche_icon_info{
+    margin: 20px 0 0;
+    float: right;
+    clear:both;
+}
+.sche_icon_info li{
+    float: left;
+    margin-right: 10px;
+    font-size:12px;
+    color: #6d6c6a;
+}
+.sche_icon_info p{
+    padding: 0;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    margin-left: 8px;
+}
+.sche_icon_info span{
+    display: block;
+    float: left;
+}
+.clear_fix{
+    clear:both;
+}
