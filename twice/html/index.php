@@ -17,6 +17,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- ===== custom.js ===== -->
     <script src="../lib/js/custom.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+            $('.wrapper').fadeIn(500);
+        })
+    </script>
+
     <style>
         .wrapper { height:100%; background-repeat:no-repeat; background-size:cover; }
         @media screen and (min-width:769px){
@@ -30,7 +36,7 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" style="display:none;">
 
         <?php include("header.php"); ?>
 
