@@ -336,11 +336,7 @@ $(document).on('click','.cross-btn',function(){
     $('.pop_blind').remove();
   });
 })
-$(document).on('click','.pop_blind',function(){
-  $('.pop_blind').fadeOut(500,function(){
-    $('.pop_blind').remove();
-  });
-})
+
  /*===           슬라이드 li width 계산 함수            ====*/
 function liWidth(){
     var wid = null;
@@ -382,7 +378,7 @@ function slideMove(target,amount){
 function scBtn(){
 
     if( $('.home-right .card__back').css('transform') == 'matrix(1, 0, 0, 1, 0, 0)' ){
-        if( $('.aboutMe-body').height() < $('.aboutMe-section').outerHeight(true) ){
+        if( $('.aboutMe-content').height() < $('.aboutMe-con-box').outerHeight(true) ){
             $('.home-right .sc_btn img').stop().fadeIn(1000);
         }else $('.home-right .sc_btn img').stop().fadeOut(2000);
     };
@@ -419,8 +415,7 @@ moveIcon();
 function scFn(mother,son,scroll,target){
 
     var sc_target = mother.outerHeight(true) + scroll;
-    var sc_sum = son.outerHeight(true);
-    console.log(scroll, sc_target,sc_sum);
+    var sc_sum = son.outerHeight(true);    
     if( scroll == 0){ target.stop().fadeOut(400,function(){
        target.css({'transform':'rotateX(0)','-webkit-transform':'rotateX(0)','-o-transform':'rotateX(0)','-moz-transform':'rotateX(0)','-ms-transform':'rotateX(0)'}).fadeIn(400);
     });
@@ -500,5 +495,4 @@ $(document).on('click','.flaticon-back',function(){
 //         console.log(scTop);
         scFn($('.sOn .popcon_wrap'),$('.sOn .popcon_wrap p'),$('.sOn .popcon_wrap').scrollTop(),$('.pop_sc img'));
     });
-
 });
