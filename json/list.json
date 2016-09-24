@@ -1,11 +1,38 @@
 {
   "list":[
     {
+    "name":"코엑스 파르나스타워",
+    "bgname":"parnas.JPG",
+    "about":"웹퍼블리싱",
+    "period":"2016.09(3일간)",
+    "skill":"HTML/CSS, Javascript, JQuery, Bootstrap, 반응형",
+    "link":"<a target='_blank' href='http://parnastower.com'>http://parnastower.com</a>",
+    "repository":"<a target='_blank' href='https://github.com/logaegae/project_3050.git'>https://github.com/logaegae/project_3050.git</a>"
+    },
+    {
+    "name":"국립공원 3050",
+    "bgname":"3050_l.png",
+    "about":"웹퍼블리싱, 유지/보수",
+    "period":"2016.09(7일간)",
+    "skill":"HTML/CSS, Javascript, JQuery, Bootstrap, 반응형, 전자정보프레임워크",
+    "link":"<a target='_blank' href='http://freeive.com:8080/project3050/site/main.do'>http://freeive.com:8080/project3050/site/main.do</a>",
+    "repository":"<a target='_blank' href='https://github.com/logaegae/project_3050.git'>https://github.com/logaegae/project_3050.git</a>"
+    },
+    {
+    "name":"KOITA(MOBILE)",
+    "bgname":"koita_l.png",
+    "about":"모바일 웹퍼블리싱. 유지/보수",
+    "period":"2016.09(14일간)",
+    "skill":"HTML/CSS, Javascript, JQuery, Bootstrap",
+    "link":"<a id='koitaOpen'>http://116.120.57.213/mobile/html/main/main.asp</a>",
+    "repository":"<a target='_blank' href='https://github.com/logaegae/project_koita_mobile.git'>https://github.com/logaegae/project_koita_mobile.git</a>"
+    },
+    {
     "name":"CocaCola",
     "bgname":"cocacola.jpg",
-    "about":"웹퍼블리싱, 공동작업(WBS/<a href='images/cocacola_IA.pdf' target='_blank'>IA</a>작성)<br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+    "about":"웹퍼블리싱, 공동작업(WBS/<a href='images/cocacola_IA.pdf' target='_blank'>IA</a>)<br>※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
     "period":"2016.07(15일간)",
-    "skill":"HTML/CSS, Javascript, JQuery, SVN, <a href='images/easy_gantt_cocacola.pdf' target='_blank'>Redmine</a>",
+    "skill":"HTML/CSS, Javascript, JQuery, 반응형, <a href='images/easy_gantt_cocacola.pdf' target='_blank'>Redmine</a>",
     "link":"<a target='_blank' href='http://pf.i-make.kr:8080/CocaCola/index.html'>http://pf.i-make.kr:8080/CocaCola/index.html</a>",
     "repository":"<a target='_blank' href='https://github.com/logaegae/project_team_cocacola.git'>https://github.com/logaegae/project_team_cocacola.git</a>"
     },
@@ -21,20 +48,11 @@
     {
       "name":"JYP Twice",
       "bgname":"twice.jpg",
-      "about":"웹퍼블리싱, 반응형/CSS3<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
+      "about":"웹퍼블리싱<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
       "period":"2016.06(5일간)",
-      "skill":"HTML/CSS, Javascript, JQuery",
+      "skill":"HTML/CSS, Javascript, JQuery, Bootstrap, 반응형",
       "link":"<a target='_blank' href='//logaegae.cafe24.com/twice/html/index.php'>http://logaegae.cafe24.com/twice/html/index.php</a>",
       "repository":"<a target='_blank' href='https://github.com/logaegae/project_twice.git'>https://github.com/logaegae/project_twice.git</a>"
-    },
-    {
-      "name":"Naver News",
-      "bgname":"navernews.jpg",
-      "about":"웹퍼블리싱 트레이싱, HTML/CSS/레이아웃<br> ※ 본 작업물은 해당 기업과는 관련이 없는 개인 포트폴리오용 작업물입니다",
-      "period":"2016.05(3일간)",
-      "skill":"HTML/CSS",
-      "link":"",
-      "repository":""
     },
     {
       "name":"경희의료원",

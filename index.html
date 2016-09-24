@@ -127,6 +127,46 @@
                                             <div class="about-wrap-wrap">
                                                 <div class="about-wrap">
             										<div class="about-content row" tabindex="0" style="overflow: hidden; outline: none;">
+
+                                                    <div class="content_box col-lg-6 no-padding">
+                                                      <div class="img_wrap">
+                                                          <div class="img_content" style="background-image: url('images/parnas_m.png');background-position: center center; background-size: 140%; background-color: #FFF;">
+                                                              <div class="blind">
+                                                                  <dl>
+                                                                      <dt style="font-size:18px;">코엑스 파르나스타워</dt>
+                                                                      <dd style="font-size:18px;">퍼블리싱</dd>
+                                                                      <dd style="font-size:16px;">2016.09</dd>
+                                                                  </dl>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="content_box col-lg-6 no-padding">
+                                                      <div class="img_wrap">
+                                                          <div class="img_content" style="background-image: url('images/3050.JPG');background-position: center center; background-size: 140%; background-color: #FFF;">
+                                                              <div class="blind">
+                                                                  <dl>
+                                                                      <dt style="font-size:18px;">국립공원(3050)</dt>
+                                                                      <dd style="font-size:18px;">퍼블리싱</dd>
+                                                                      <dd style="font-size:16px;">2016.09</dd>
+                                                                  </dl>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                    	<div class="content_box col-lg-6 no-padding">
+                                                            <div class="img_wrap">
+                                                                <div class="img_content" style="background-image: url('images/koita.PNG');background-position: center -36px;background-size: 100%;">
+                                                                    <div class="blind">
+                                                                        <dl>
+                                                                            <dt>KOITA FORUM 2016</dt>
+                                                                            <dd>퍼블리싱, 유지/보수</dd>
+                                                                            <dd style="font-size:16px;">2016.09</dd>
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+    							                         </div>
                                                     	<div class="content_box col-lg-6 no-padding">
                                                             <div class="img_wrap">
                                                                 <div class="img_content" style="background-image: url('images/cocacola.jpg');background-position: left center;">
@@ -168,21 +208,6 @@
                                                                   </div>
                                                               </div>
         						                        </div>
-
-                                                        <div class="content_box col-lg-6 no-padding">
-                                                          <div class="img_wrap">
-                                                              <div class="img_content" style="background-image: url('images/navernews.jpg');background-position: center center;">
-                                                                  <div class="blind">
-                                                                      <dl>
-                                                                          <dt style="font-size:18px;">NAVER NEWS</dt>
-                                                                          <dd style="font-size:18px;">퍼블리싱 트레이싱</dd>
-                                                                          <dd style="font-size:16px;">2016.05</dd>
-                                                                      </dl>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-        				                                </div>
-
                                                         <div class="content_box col-lg-6 no-padding">
 
                                                             <div class="img_wrap">
@@ -370,7 +395,6 @@
 		                                                                <dd>HTML Canvas, OpenGL</dd>
 		                                                            </dl>
 		                                                        </div>
-                                                            <div style="clear:both;"></div>
 		                                                    </div>
 		    											</div>
 	                                                </div>
@@ -385,7 +409,7 @@
     				</div>
 
 
-    				<div id="animatedModal" class="animated animatedModal-off" style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; overflow-y: auto; z-index: -9999; opacity: 0; animation-duration: 0.6s; background-color: rgb(57, 190, 185);">
+    				<div id="animatedModal" class="animated animatedModal-off" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; z-index: -9999; opacity: 0; animation-duration: 0.6s; background-color: rgb(57, 190, 185);">
     					<div class="modal-content">
     						<div class="col-lg-6 col-md-6  col-sm-6 col-xs-12 no-padding">
                                 <div id="map"></div>
@@ -429,19 +453,19 @@
         									<h5 class="error">
         									<span class="colored-text icon_error-circle_alt"></span> 이메일이 유효하지 않거나 메세지 내용이 없습니다. </h5>
 
-                          <label for="cf-name">
+                          					<label for="cf-name">
                           					 <fieldset>
 						  					 	<legend>메세지 보내기</legend>
 		        									<div class="field-wrapper col-md-12">
 		        										<input class="form-control input-box" id="cf-name" type="text" name="cf-name" placeholder="이름">
 		        									</div></label>
 
-		                          <label for="cf-email">
+		                        					  <label for="cf-email">
 		        									<div class="field-wrapper col-md-12">
 		        										<input class="form-control input-box" id="cf-email" type="email" name="cf-email" placeholder="이메일">
 		        									</div></label>
 
-		                          <label for="cf-subject">
+		                         					 <label for="cf-subject">
 		        									<div class="field-wrapper col-md-12">
 		        										<input class="form-control input-box" id="cf-subject" type="text" name="cf-subject" placeholder="제목">
 		        									</div></label>
@@ -455,6 +479,7 @@
     								</div>
     							</div>
     						</div>
+                <div class="clear" style="clear:both;"></div>
     					</div>
     				</div>
 
@@ -474,11 +499,18 @@
             <script src="js/custom.js"></script>
 
     		<script>
+        //팝업함수
+
+        $(document).on('click','#koitaOpen',function(){
+          window.open("http://116.120.57.213/mobile/html/main/main.asp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=0,width=400");
+        })
+
     		// 로딩시
 
     		$(window).load(function() {
 				// DIV 호출
                 $(".preloader").fadeOut("slow");
+
     		})
 
     		</script>
